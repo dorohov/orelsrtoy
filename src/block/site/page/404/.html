@@ -1,0 +1,28 @@
+<div class="content-block {{class}}" role="main">
+	<div class="container content-block__container">
+		[[azbntple 
+			tpl="/src/block/site/default/breadcrumb/level1.html" 
+			bread_prefix="breadcrumb__"
+			level_1="Страница не найдена"
+		]]
+		<div class="{{prefix_block}}preview">
+			<img src="{{url-path-img}}/default/404.jpg" alt="">
+		</div>
+		[[azbntple 
+			tpl="/src/block/site/default/page-header/heading.html" 
+			header_prefix="page-header__" 
+			header="Cтраница не найдена"
+			header_mod="is--center  is--error"
+		]]	
+		<div class="{{prefix_block}}btn">
+			[[azbntple 
+				tpl="/src/block/site/default/button/link.html" 
+				button_class=" is--link" 
+				button_prefix="btn__" 
+				button_name="На главную"
+				button_icon="btn-arrow-left"
+				button_href="/#" 
+			]]	
+		</div>
+	</div>
+</div>

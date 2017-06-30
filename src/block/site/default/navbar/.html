@@ -1,0 +1,207 @@
+<nav class="navbar {{class}}">
+	<div class="container {{navbar_prefix}}container">
+		<div class="row {{navbar_prefix}}row">
+			<div class="cols {{navbar_prefix}}cols  is--header"> 				
+				<div class="{{navbar_prefix}}header">
+					<div class="row {{navbar_prefix}}row-header ">
+						<div class="cols {{navbar_prefix}}cols-header  is--hamburger">
+							<div class="{{navbar_prefix}}hamburger">
+								<button class="{{navbar_prefix}}hamburger-btn hamburger__item" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false" data-toggle-nav=".navbar-site" data-body="html" data-collapse-nav=".navbar__collapse">
+									<span class="hamburger__line  is--left"></span>
+									<span class="hamburger__line  is--center"></span>
+									<span class="hamburger__line  is--right"></span>
+								</button>
+							</div>
+						</div>
+						<div class="cols {{navbar_prefix}}cols-header  is--brand">
+							<a class="{{navbar_prefix}}brand" href="/">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="logotip" ]]
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="cols {{navbar_prefix}}cols  is--collapse">
+				<div class="{{navbar_prefix}}collapse" >
+					<div class="{{navbar_prefix}}collapse-inner">
+						<div class="row {{navbar_prefix}}collapse-row" >
+							<div class="cols {{navbar_prefix}}collapse-cols  is--btn" >	
+								[[azbntple 
+									tpl="/src/block/site/default/button/link.html" 
+									button_class=" is--red is--small  is--navbar" 
+									button_prefix="btn__" 
+									button_name="Выбрать квартиру"
+									button_icon="btn-arrow-left"
+									button_href="/apartment-selection.html" 
+								]]
+							</div>
+							<div class="cols {{navbar_prefix}}collapse-cols  is--full" >
+								<div class="row {{navbar_prefix}}row-left" >
+									<div class="cols {{navbar_prefix}}cols-left  is--nav" >
+										<div class="{{navbar_prefix}}nav-flex">
+											<div class="{{navbar_prefix}}nav-line  is--top">
+												<ul class="{{navbar_prefix}}nav is--small">
+													<li class="{{navbar_prefix}}nav-item">
+														<a href="/property-com.html" class="{{navbar_prefix}}nav-link">
+															Коммерческая недвижимость
+														</a>  
+													</li>	
+													<li class="dropdown {{navbar_prefix}}nav-item">
+														<a href="#" class="dropdown-toggle {{navbar_prefix}}nav-link" data-toggle="dropdown">Реализованные объекты <span class="{{navbar_prefix}}nav-link-icon"></span></a>
+														<div class="dropdown-menu {{navbar_prefix}}nav-dropdown-menu">
+															<ul class=" {{navbar_prefix}}nav-dropdown-menu-inner">
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/property-ready.html" class="{{navbar_prefix}}nav-dropdown-link">Наугорский
+																	</a>
+																</li>
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/property-ready.html" class="{{navbar_prefix}}nav-dropdown-link">Новая Ботаника
+																	</a>
+																</li>
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/property-ready.html" class="{{navbar_prefix}}nav-dropdown-link">Общественные здания
+																	</a>
+																</li>
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/property-ready.html" class="{{navbar_prefix}}nav-dropdown-link">Промышленные здания
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</li> 
+													<li class="dropdown {{navbar_prefix}}nav-item">
+														<a href="#" class="dropdown-toggle {{navbar_prefix}}nav-link" data-toggle="dropdown">Инвесторам <span class="{{navbar_prefix}}nav-link-icon"></span></a>
+														<div class="dropdown-menu {{navbar_prefix}}nav-dropdown-menu">
+															<ul class=" {{navbar_prefix}}nav-dropdown-menu-inner">
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/investors-info.html" class="{{navbar_prefix}}nav-dropdown-link">О раскрытии информации
+																	</a>
+																</li>
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/investors-charter.html" class="{{navbar_prefix}}nav-dropdown-link">Уставы
+																	</a>
+																</li>
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/investors-reports.html" class="{{navbar_prefix}}nav-dropdown-link">Сообщения и отчеты
+																	</a>
+																</li>
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/investors-docs.html" class="{{navbar_prefix}}nav-dropdown-link">Регистрационные документы
+																	</a>
+																</li>
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/investors-questions.html" class="{{navbar_prefix}}nav-dropdown-link">Вопросы и ответы
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</li> 
+												</ul>
+											</div>
+											<div class="{{navbar_prefix}}nav-line  is--bottom">
+												<ul class="{{navbar_prefix}}nav">
+													<li class="dropdown {{navbar_prefix}}nav-item">
+														<a href="#" class="dropdown-toggle {{navbar_prefix}}nav-link" data-toggle="dropdown">Квартиры <span class="{{navbar_prefix}}nav-link-icon"></span></a>
+														<div class="dropdown-menu {{navbar_prefix}}nav-dropdown-menu">
+															<ul class=" {{navbar_prefix}}nav-dropdown-menu-inner">
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/areas.html" class="{{navbar_prefix}}nav-dropdown-link">
+																	Районы
+																	</a>
+																</li>
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/houses.html" class="{{navbar_prefix}}nav-dropdown-link">
+																	Дома 
+																	</a>
+																</li>
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/docs.html" class="{{navbar_prefix}}nav-dropdown-link">
+																	Документы
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</li> 
+													<li class="{{navbar_prefix}}nav-item">
+														<a href="/action.html" class="{{navbar_prefix}}nav-link">
+															Акции
+														</a>  
+													</li>
+													<li class="dropdown {{navbar_prefix}}nav-item">
+														<a href="#" class="dropdown-toggle {{navbar_prefix}}nav-link" data-toggle="dropdown">Ипотека <span class="{{navbar_prefix}}nav-link-icon"></span></a>
+														<div class="dropdown-menu {{navbar_prefix}}nav-dropdown-menu">
+															<ul class=" {{navbar_prefix}}nav-dropdown-menu-inner">
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/mortgage-calc.html" class="{{navbar_prefix}}nav-dropdown-link">
+																	Расчет ипотеки
+																	</a>
+																</li>
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/mortgage-military.html" class="{{navbar_prefix}}nav-dropdown-link">
+																	Военная ипотека
+																	</a>
+																</li>
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/mortgage-maternal.html" class="{{navbar_prefix}}nav-dropdown-link">
+																	Материнский капитал
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</li> 
+													<li class="dropdown {{navbar_prefix}}nav-item">
+														<a href="#" class="dropdown-toggle {{navbar_prefix}}nav-link" data-toggle="dropdown">О компании <span class="{{navbar_prefix}}nav-link-icon"></span></a>
+														<div class="dropdown-menu {{navbar_prefix}}nav-dropdown-menu">
+															<ul class=" {{navbar_prefix}}nav-dropdown-menu-inner">
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/about.html" class="{{navbar_prefix}}nav-dropdown-link">
+																	О компании
+																	</a>
+																</li>
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/history.html" class="{{navbar_prefix}}nav-dropdown-link">
+																	История
+																	</a>
+																</li>
+																<li class="{{navbar_prefix}}nav-dropdown-item">
+																	<a href="/news.html" class="{{navbar_prefix}}nav-dropdown-link">
+																	Новости
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</li> 		
+													<li class="{{navbar_prefix}}nav-item">
+														<a href="/contacts.html" class="{{navbar_prefix}}nav-link">
+															Контакты
+														</a> 
+													</li>	 
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="cols {{navbar_prefix}}cols-left  is--contacts" >
+										<div class="dropdown {{navbar_prefix}}search-dropdown">
+											<a href="#" class="{{navbar_prefix}}search-btn dropdown-toggle" data-toggle="dropdown">
+												[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="search" ]]
+											</a>
+											<ul class="dropdown-menu {{navbar_prefix}}search-dropdown-menu">
+												[[azbntple
+													tpl="/src/block/site/default/search/.html"
+													search_block="search__"
+													search_placeholder="Поиск"
+												]]
+											</ul>
+										</div>
+										<a href="tel:{{contacts.phone_tel}}" class="{{navbar_prefix}}tel">
+											{{contacts.phone}}
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

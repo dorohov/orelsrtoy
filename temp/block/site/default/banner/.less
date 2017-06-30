@@ -1,0 +1,36 @@
+.banner-block{
+	/*@media @media-device {padding-top: 20px;}
+	@media @media-screen {padding-top: 1.4vw;}*/
+}
+.banner__{
+	&carousel{
+		position: relative;
+	}
+	&carousel-control{
+		position: absolute;
+		top: 0%;
+		height: 100%;
+		color: fadeout(@banner-color, 80%);		
+		transition: @trs-site;
+		@media @media-device {
+			width: 40px;
+			padding: 0 10px;
+		}
+		@media @media-screen {
+			opacity: 0;
+			width: 6vw;
+			max-width: 100px;
+			padding: 0 20px;
+		}
+		&[data-slide="prev"]{
+			left: 0;
+		}
+		&[data-slide="next"]{
+			right: 0;
+		}
+		.banner__carousel:hover &{
+			opacity: 1;
+
+		}
+	}
+}

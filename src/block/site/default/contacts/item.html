@@ -1,0 +1,27 @@
+<div class="{{contacts_prefix}}block">
+	<h4 class="{{contacts_prefix}}heading">{{contacts_header}}</h4>	
+	<div class="{{contacts_prefix}}item  is--adress">
+		<div class="{{contacts_prefix}}item-icon  is--adress">
+			[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="contacts-address" ]]
+		</div>
+		{{contacts_address}}
+	</div>	
+	<div class="{{contacts_prefix}}item  is--time">
+		<div class="{{contacts_prefix}}item-icon  is--time">
+			[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="contacts-time" ]]
+		</div>
+		{{contacts_time}}
+	</div>
+	<a href="mailto:{{contacts_email}}" class="{{contacts_prefix}}item  is--email">
+		<div class="{{contacts_prefix}}item-icon  is--email">
+			[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="contacts-email" ]]
+		</div>
+		{{contacts_email}}
+	</a>	
+	<a href="tel:{{contacts_phone_tel}}" class="{{contacts_prefix}}item  is--phone">
+		<div class="{{contacts_prefix}}item-icon  is--phone">
+			[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="contacts-phone" ]]
+		</div>
+		{{contacts_phone}}
+	</a>	
+</div>

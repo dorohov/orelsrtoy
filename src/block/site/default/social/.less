@@ -1,0 +1,46 @@
+.social__{
+	&block{}
+	&row{
+		//@media @media-size-xs {
+			margin-left: -(@soc-gutter);
+			margin-right: -(@soc-gutter);
+		//}
+	}
+	&cols{
+		//@media @media-size-xs {
+			padding-left: @soc-gutter;
+			padding-right: @soc-gutter;
+		//}
+	}
+	&item{
+		display: block;
+		border-radius: 50%;
+		width: @soc-size; 
+		height: @soc-size;
+		transition: @trs-site;
+		border-radius: @soc-border-radius;
+		background-color: @soc-bg;
+		padding: 7px;		
+		&, &:hover, &:focus{color: @soc-color;}
+		&:hover{
+			&.is--vk{
+				background-color: @color-vk;				
+			}
+			&.is--fb{
+				background-color: @color-fb;				
+			}
+			&.is--inst{
+				background-color: @color-inst;				
+			}
+			&.is--ok{
+				background-color: @color-ok;				
+			}
+			&.is--tw{
+				background-color: @color-tw;				
+			}
+			&.is--skype{
+				background-color: @color-skype;				
+			}
+		}
+	}
+}

@@ -1,0 +1,157 @@
+<link rel="stylesheet" type="text/css" href="/css/lightslider.css" />
+<link rel="stylesheet" type="text/css" href="/css/lightgallery.css" />
+<script type="text/javascript">
+	$(document).ready(function() {
+		var $lg = $('#imageGallery');
+		$lg.lightSlider({
+			gallery:true,
+			autoWidth: false,
+			item:1,
+			//loop:true,
+			thumbItem:3,
+    		vertical:true,
+    		verticalHeight: 640,
+    		vThumbWidth: 225,
+			slideMargin:0,
+			thumbMargin: 0,
+			galleryMargin: 0, 
+			enableDrag: false,
+			currentPagerPosition:'middle',
+			onSliderLoad: function(el) {
+				el.lightGallery({
+					selector: '#imageGallery .lslide',
+					showThumbByDefault: true,
+					download: false,
+				});
+			}, 	  
+			responsive : [
+				{
+					breakpoint:2000,
+					settings: {
+						thumbItem:3,
+			    		vertical:true,
+			    		verticalHeight: 640,
+			    		vThumbWidth: 225						
+				  	}
+				},
+				{
+					breakpoint:1700,
+					settings: {
+						thumbItem:3,
+			    		vertical:false,
+			    		verticalHeight: 640,
+			    		//vThumbWidth: 225,
+				  	}
+				}
+			]
+		}); 	
+	});
+</script>
+<!-- light Slider -->
+<script src="/js/jquery.lightslider.js"></script>
+<script src="/js/jquery.lightgallery.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="/css/lightslider.css" />
+<link rel="stylesheet" type="text/css" href="/css/lightgallery.css" />
+<script type="text/javascript">
+	$(document).ready(function() {					
+		var slides = $('#imageGallery').eq(0).find('._pipc__slider-item');
+		$(document.body).on('azbn.setSliderCounters', null, {}, function(event, number, all){
+			
+			$('.azbn-project-slide-number').html(number);
+			$('.azbn-project-slide-all').html(all);
+			
+		});
+		var $lg = $('#imageGallery');
+		$lg.lightSlider({
+			gallery:true,
+			autoWidth: false,
+			item:1,
+			//loop:true,
+			thumbItem:5,
+			slideMargin:0,
+			thumbMargin: 20,
+			galleryMargin: 0, 
+			enableDrag: false,
+			currentPagerPosition:'middle',
+			//counter : true,
+			/*
+			onAfterSlide: function (el) {
+				
+				var id = $('#imageGallery').getCurrentSlideCount();
+				
+				console.log(id);
+				
+			},
+			*/
+			onSliderLoad: function(el) {
+				el.lightGallery({
+					selector: '#imageGallery .lslide',
+					showThumbByDefault: true,
+					download: false,
+					//counter : true,
+					//appendCounterTo : '._pipc__count-block',
+					/*
+					'onAfterSlide.lg' : function(event, prevIndex, index, fromTouch, fromThumb){
+						console.log(123);
+					},
+					*/
+					/*
+					onAfterSlide : function(event){
+						//console.log(index, fromTouch, fromThumb);
+						alert('123');
+					},
+					*/
+				});
+				
+				$('.lSSlideOuter .lSPager.lSGallery li a').on('click', function(event){
+					//console.log($(this).closest('li'));
+					
+					var _items = $(this).closest('.lSGallery').find('li');
+					
+					$(document.body).trigger('azbn.setSliderCounters',[_items.index($(this).closest('li')) + 1, _items.length]);
+					
+				});
+				
+				if (!device.mobile()) {							
+					$("._pipc__cols-note").prependTo($(".lSSlideOuter"));
+					$("._pipc__soc-block").prependTo($(".lSSlideWrapper"));
+					$("._pipc__count-block").appendTo($(".lSSlideWrapper"));
+					//$("._pipc__slider-inner").wrap($("._pipc__slider-border"));
+				};
+				
+				$(window).trigger('resize');
+			}, 	  
+			responsive : [
+				{
+					breakpoint:767,
+					settings: {
+						thumbItem:4
+				  	}
+				},
+				{
+					breakpoint:475,
+					settings: {
+						thumbItem:2
+				  	}
+				}
+			]
+		}); 
+		
+		$('.lSAction .lSPrev, .lSAction .lSNext').on('click', function(event){
+			
+			var active = slides.filter('.active');
+			
+			$(document.body).trigger('azbn.setSliderCounters',[slides.index(active) + 1, slides.length]);
+			
+		});
+		
+		$('.lSAction .lSPrev').trigger('click');
+		
+		
+		
+	});
+</script>
+<script src="/plugins/lightSlider/js/lightslider.min.js"></script>
+<script src="/plugins/lightGallery/js/lightgallery.min.js"></script>
+<script src="/plugins/lightGallery/js/lg-thumbnail.min.js"></script>
+<script src="/plugins/lightGallery/js/lg-zoom.min.js"></script> -->

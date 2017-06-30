@@ -1,0 +1,19 @@
+<div class="modal fade {{modals_class}}" id="{{modals_id}}" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog {{modals_prefix}}dialog">
+		<div class="modal-body {{modals_prefix}}body" >
+			<button type="button" class="btn-site btn-close modal-close" data-dismiss="modal" aria-hidden="true">
+				[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="cancel" class="icon-cancel"]]
+			</button>
+			<div class="modal-content {{modals_prefix}}content">
+				[[azbntple 
+					tpl="/src/block/site/default/form/fio-tel-data-time-note.html"
+					heading_form="Записаться на прием"
+					note_form="В ближайшее время с вами свяжется оператор call-центра для уточнения данных. Спасибо!"
+					prefix_form="form__"
+					class_form="block "
+					btn_name="Отправить заявку" 
+				]] 
+			</div> 
+		</div>
+	</div>
+</div>

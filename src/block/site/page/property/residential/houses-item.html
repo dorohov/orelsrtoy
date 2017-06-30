@@ -1,0 +1,44 @@
+<div class="content-block {{class}}" role="main">
+	<div class="container content-block__container">
+		[[azbntple 
+			tpl="/src/block/site/default/breadcrumb/level3.html" 
+			bread_prefix="breadcrumb__"
+			level_1="Микрорайоны"
+			level_1_link="/areas.html"
+			level_2="Болховский микрорайон"
+			level_2_link="/area-bolhov.html"
+			level_3="ул. Зеленина, дом 8"
+		]]
+		[[azbntple 
+			tpl="/src/block/site/default/page-header/heading-icon.html" 
+			header_prefix="page-header__" 
+			header="ул. Зеленина, дом 8"
+			header_icon="header-houses"
+		]]	
+		<div class="{{prefix_block}}info">
+			<div class="row  is--wrap is--gutter">
+				<div class="cols  is--cols-8 {{prefix_block}}cols">
+					[[azbntple 
+						tpl="/src/block/site/default/houses/slider.html"
+						houses_prefix="houses-slider__" 
+					]]	
+				</div>
+				<div class="cols  is--cols-4 {{prefix_block}}cols">			
+					[[azbntple 
+						tpl="/src/block/site/default/houses/panel.html"
+						houses_prefix="houses-panel__" 
+						houses_area="Зареченский микрорайон"
+					]]
+				</div>
+			</div>
+		</div>	
+		[[azbntple 
+			tpl="/src/block/site/default/houses/layout.html"
+			houses_prefix="houses-layout__" 
+		]]
+		[[azbntple 
+			tpl="/src/block/site/default/gallery/panel.html"
+			gallery_prefix="gallery-panel__" 
+		]]
+	</div>
+</div>

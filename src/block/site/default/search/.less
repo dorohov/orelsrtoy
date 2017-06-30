@@ -1,0 +1,74 @@
+.search-block{}
+.search__{
+	&form{
+		//display: flex;
+		position: relative;
+	}
+	&input{
+		border: @b-search-border;
+		border-right: 0;
+		background: @b-search-bg;
+		color: @b-search-color;
+		height: @b-search-height;
+	    padding: 5px 70px 5px 20px;
+	    width: 100%;	    
+		.calcFontSize(14, 16, 320, 1680);
+		.calcLineHeight(14, 16, 320, 1680);
+		transition: @trs-site;
+		&::-moz-placeholder{
+			color: @b-search-color-plc;
+		}
+		&::-webkit-input-placeholder {
+			color: @b-search-color-plc;
+		}
+		&:focus{ 
+			background: @b-search-bg-focus;
+			color: @b-search-color-focus;
+			&::-moz-placeholder{
+				color: @b-search-color-focus;
+			}
+			&::-webkit-input-placeholder {
+				color: @b-search-color-focus;
+			}
+			+ .search__btn-submit{
+				background: @b-search-bg-focus;
+				color: @b-search-color-focus;			 	
+			}
+		}
+	}
+	&btn-submit{
+		background: @b-search-bg;
+		border: @b-search-border;
+		border-left: 0;
+		color: @b-search-color;
+		width: 62px;
+    	padding: 10px 15px;
+		height: @b-search-height;
+		transition: @trs-site;
+
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	&item{
+		border-left: 2px solid @blue;
+		.calcFontSize(16, 20, 320, 1680);
+		.calcLineHeight(22, 26, 320, 1680);
+		padding-left: 30px;
+		&:last-child{margin-bottom: 0}
+		@media @media-device {margin-bottom: 25px;}
+		@media @media-screen {margin-bottom: 2.5vw;}
+	}
+	&heading{
+		margin-bottom: 0px;
+	}
+	&sub{
+		font-size: @b-fs - 4px;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+	}
+	&note{
+		font-size: @b-fs - 2px;
+		font-style: italic;
+	}
+}

@@ -1,0 +1,152 @@
+.commercial-panel__{
+	&block{}
+	&table-responsive{
+		@media @media-size-xs {
+			padding-top: 30px;
+			position: relative;
+			&::before{
+				content: "Листайте вправо \27A4";
+				position: absolute;
+				top: 0px;
+				left: 0;
+				font-family: @b-ff-2;
+				color: @green;
+				letter-spacing: 0.8px;
+			}
+		}
+		@media @media-device {
+			margin-bottom: 30px;			
+			overflow-y: hidden;
+		    overflow-x: auto;
+		    width: 100%;
+		    border-color: @green;
+		    border:0;
+		}
+		@media @media-screen {
+			margin-bottom: 2vw;
+
+			html.msie &{overflow: visible;}
+		}		
+	}
+	&table{
+		@media @media-device {
+			width: 2000px;
+			border: 2px solid @green;
+		}
+		thead{
+			td, th{
+				color: @blue;
+				text-align: center;
+				font-size: @b-fs + 6px;
+				line-height: @b-lh + 0px;
+				border-bottom: 2px solid @green;
+				padding: 25px 15px;
+				vertical-align: middle;
+				@media @media-device {
+				    white-space: nowrap;
+				}
+				@media @media-size-md {
+				    font-size: @b-fs;
+				}
+				@media @media-size-xxl {
+					font-size: @b-fs + 12px;
+					line-height: @b-lh + 6px;
+				}
+				&:first-child{
+					text-align: left;
+					@media @media-screen {padding-left: 0;}						
+				}
+			}
+		}
+		tbody{
+			td, th{
+				@media @media-device {
+				    white-space: nowrap;		
+				}
+				color: @blue-dark;
+				text-align: center;
+				vertical-align: middle;
+				padding: 15px;
+				border-bottom: 1px dashed @green;
+				&.is--noborder{
+					border-bottom: 0;
+					padding-bottom: 0;
+					padding-top: 30px;
+				}
+				&.is--btn{
+					padding-top: 0px;
+				}
+				&.is--left{
+					text-align: left;
+					img{margin: 0}
+					@media @media-screen {padding-left: 0;}
+				}
+				&.is--right{text-align: right}
+				&[rowspan="2"]{
+					padding: 45px 15px;
+				}			
+			}
+		}
+		img{
+			margin: 0 auto;
+			@media @media-size-sm {min-width: 200px;}
+			@media @media-size-md {width: 100px;}
+			@media @media-size-lg {width: 140px;}
+		}
+	}
+	&heading{
+		font-size: @b-fs + 2px;	
+		font-weight: 700;
+		@media @media-size-xxl {font-size: @b-fs + 6px;}		
+	}	
+	&area{
+		font-size: @b-fs - 2px;	
+		@media @media-size-xxl {font-size: @b-fs;}		
+	}		
+	&area-val{		
+		font-size: @b-fs + 2px;
+		line-height: @b-lh;		
+		font-weight: 700;
+		sup{font-weight: 400}
+		@media @media-size-xxl {font-size: @b-fs + 6px;}
+	}
+	&area-note{	
+		font-weight: 400;
+		font-size: @b-fs;
+
+	}
+	&cost{
+		font-size: @b-fs + 6px;
+		line-height: @b-lh;
+		font-weight: 700;
+		padding-right: 30px;
+		position: relative;
+		display: inline-block;
+		span{
+			width: 18px;
+			height: 18px;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			svg{display: block;}
+		}
+	}
+	&cost-val{
+		font-size: @b-fs;
+		line-height: @b-lh - 11px;
+		padding-right: 45px;
+		position: relative;
+		display: inline-block;
+		span{
+			width: 45px;
+			height: 13px;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			svg{display: inline-block; width: 13px;}
+		}
+	}
+	&btn{text-align: center;}
+} 

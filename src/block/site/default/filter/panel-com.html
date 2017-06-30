@@ -1,0 +1,42 @@
+<div class="{{filter_prefix}}block">
+	<div class="row {{filter_prefix}}row  is--wrap  is--gutter">
+		<div class="cols {{filter_prefix}}cols  {{filter_mod}}">
+			[[azbntple 
+				tpl="/src/block/site/default/filter/select.html" 
+				filter_prefix="filter-item__"
+				filter_label="Тип предложения"
+				filter_id="fil_type" 
+				filter_option="<option>Аренда</option><option>Продажа</option>"
+			]]
+		</div>
+		<div class="cols {{filter_prefix}}cols  {{filter_mod}}">
+			[[azbntple 
+				tpl="/src/block/site/default/filter/select.html" 
+				filter_prefix="filter-item__"
+				filter_label="Местоположение <span>(район)</span>"
+				filter_id="fil_area" 
+				filter_option="<option>Зареченский микрорайон</option><option>Болховский микрорайон</option>"
+			]]
+		</div>
+		<div class="cols {{filter_prefix}}cols  {{filter_mod}}">
+			[[azbntple 
+				tpl="/src/block/site/default/filter/select.html" 
+				filter_prefix="filter-item__"
+				filter_label="Тип помещения"
+				filter_id="fil_apartment" 
+				filter_option="<option>Офисное помещение</option><option>Производственное помещение</option><option>Помещение в многоквартирных домах</option>"
+			]]
+		</div>
+		<div class="cols {{filter_prefix}}cols  is--btn  {{filter_mod}}">
+			<div class="{{filter_prefix}}btn">
+				[[azbntple 
+					tpl="/src/block/site/default/button/button.html" 
+					button_class="is--red  is--small  is--download" 
+					button_prefix="btn__" 
+					button_name="Показать 51 вариант"
+					button_icon="btn-arrow-bottom"
+				]]	
+			</div>
+		</div>
+	</div>
+</div> 

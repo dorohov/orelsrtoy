@@ -1,0 +1,170 @@
+.area-plan__{
+	&block{
+		position: relative;
+		width: 100%;
+		//overflow: hidden;
+		html.msie &{
+			max-height: 900px;
+    		height: 47vw;	
+		}
+		@media @media-size-xs {
+			&.is--hidden-xs{display: none;}
+			&.is--visible-xs{display: block;}
+		}
+		@media @media-notsmart {
+			&.is--hidden-xs{display: block;}
+			&.is--visible-xs{display: none;}
+		}
+	}
+	&svg{
+		display: block;
+		width: 100%;
+		height: auto;
+		html.msie &{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			max-height: 900px;
+    		height: 47vw;			
+		}
+	}
+	&popover{
+		position: absolute;
+		z-index: 2;
+		background-color: @white;
+		right: 6%;
+		top: 32.5%;
+		width: 245px;
+		padding: 35px 25px;
+		font-size: @b-fs - 4px;
+		line-height: @b-lh - 6px;
+		color: @blue-dark;
+	}
+	&popover-street{
+		color: @green;
+		margin-bottom: 20px;
+	}
+	&popover-floor{margin-bottom: 20px}
+	&popover-floor-item{
+		margin-bottom: 5px;
+		position: relative;
+		&::before{
+			content: '';
+			position: absolute;
+			bottom: 4px;
+			left: 0;
+			border-bottom: 1px dashed @blue-dark;
+			width: 100%;
+		}
+		&:last-child{margin-bottom: 0}
+	}
+	&popover-floor-row{
+		justify-content: space-between;
+		margin-right: -5px;
+		margin-left: -5px;
+		margin-top: -5px;
+	}
+	&popover-floor-cols{
+		padding-left: 5px;
+		padding-right: 5px;
+		padding-top: 5px;
+		position: relative;
+		z-index: 2;
+		html.msie &{width: 40%;}
+		&.is--name{
+			color: @blue; 
+			background-color: @white;
+		}
+		&.is--cost{
+			background-color: @white;
+			position: relative;
+			padding-right: 10px;
+			span{font-weight: 700;}
+		}
+	}
+	&popover-floor-ruble{
+		width: 8px;
+		height: 8px;
+		position: absolute;
+		top: ~"calc(50% + 4px)";
+		transform: translateY(-50%);
+		right: 0px;
+		svg{display: block;}
+	}
+	&popover-status{
+		background-color: #e2e6ee;
+		margin-right: -25px;
+		margin-left: -25px;
+		padding: 15px 0;
+		line-height: @b-lh - 8px;
+		margin-bottom: 20px;
+	}
+	&popover-status-inner{
+		padding-right: 25px;
+		padding-left: 25px;
+	}
+	&popover-status-row{
+		margin-top: -10px;
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+	&popover-status-cols{
+		padding-top: 10px;
+		padding-left: 5px;
+		padding-right: 5px;
+		text-align: center;
+		&.is--sale{
+			html.msie &{
+				width: 50%;
+			}
+
+		}
+		&.is--reserv{
+			html.msie &{
+				width: 50%;
+			}
+		}
+
+	}
+	&popover-status-num{
+		color: @orange;
+		font-family: @b-ff-2;
+		.calcFontSize(24, 34, 320, 1680);
+		.calcLineHeight(18, 28, 320, 1680);
+	}
+	&popover-date{
+		span{font-weight: 700;}
+	}
+
+}
+.area-plan-item__{
+	&group{}
+	&object{
+		fill: fadeout(@orange, 20%); 
+		opacity: 0;
+		transition: @trs-site;
+		cursor: pointer;
+		.area-plan-item__group.is--hover &{
+			opacity: 1;
+		}
+	}
+	&ruble-bg{
+		width: 53px;
+		height: 53px;
+		fill: @green;
+		transition: @trs-site;
+		cursor: pointer;
+		.area-plan-item__group.is--hover &{
+			fill: @white;
+		}
+	}
+	&ruble-icon{
+		fill: @white;
+		transition: @trs-site;
+		cursor: pointer;
+		.area-plan-item__group.is--hover &{
+			fill: @green;
+		}
+	}
+}

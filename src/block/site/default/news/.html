@@ -1,0 +1,35 @@
+<article class="{{news_class}}">
+	<div class="row {{news_block}}row">
+		<div class="cols {{news_block}}left-cols {{prefix_block}}news-left-cols">
+			<a href="{{news_link}}" class="{{news_block}}preview">
+				<img src="{{url-path-img}}{{news_preview}}" alt="">
+				<span class="{{news_block}}preview-line {{prefix_block}}news-preview-line">
+					<svg class="icon-svg icon-{{news_preview_line}}" role="img">
+						<use xlink:href="{{url-path-img}}/svg/sprite.svg#{{news_preview_line}}"></use>
+					</svg>
+				</span>
+				<div class="{{news_block}}preview-wave {{prefix_block}}news-preview-wave"><img src="{{url-path-img}}/default/{{news_wave}}" alt=""></div>
+			</a>
+		</div>
+		<div class="cols {{news_block}}right-cols {{prefix_block}}news-right-cols">
+			<div class="{{news_block}}inner {{prefix_block}}news-inner">
+				<div class="{{news_block}}date {{prefix_block}}news-date">{{news_date}}</div>
+				<h4 class="{{news_block}}heading {{prefix_block}}news-heading"><a href="{{news_link}}">{{news_heading}}</a></h4>
+				<div class="{{news_block}}note {{prefix_block}}news-note">{{news_note}}</div>
+				<div class="row {{news_block}}row-inner {{prefix_block}}news-row-inner">
+					<div class="cols {{news_block}}cols-link {{prefix_block}}news-cols-link">
+						<a href="{{news_link}}" class="{{news_block}}next">
+							читать далее
+							<span>
+							[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="arrows-next"]]</span>
+						</a>
+					</div>
+					<div class="cols {{news_block}}cols-wave {{prefix_block}}news-cols-wave">
+						<img src="{{url-path-img}}/default/{{news_wave}}" alt="">
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</article> 

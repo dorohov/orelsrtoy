@@ -1,0 +1,30 @@
+{
+	"contacts":{
+		"name":"ПАО&nbsp;«Орелстрой»",
+		"domain":"www.orelstroy.ru",
+		"domain_link":"http://www.orelstroy.ru/",
+		"agreement_page":"agreement",
+		"copyright":"ПАО&nbsp;«Орелстрой»",
+		"email":"orst@orelstroy.ru",
+		"phone":"+7 (4862) <span>63-30-19</span>", 
+		"phone_tel":"+74862633019",
+		"address":"<span>г.&nbsp;Орёл,</span> пл.&nbsp;Мира, 7г"
+	},
+	"soc":{
+		"skype":"",
+		"vk":"https://vk.com/",
+		"fb":"https://www.facebook.com/",
+		"ok":"https://www.ok.ru/",
+		"inst":"https://www.instagram.com/"
+	},
+	"url-path-css":"/wp-content/themes/azbnbasetheme/css",
+	"url-path-css":"/css",
+	"url-path-img":"/wp-content/themes/azbnbasetheme/img",
+	"url-path-img":"/img",
+	"url-path-js":"/wp-content/themes/azbnbasetheme/js",
+	"url-path-js":"/js",
+	"url-path-plugins":"/wp-content/themes/azbnbasetheme/plugins",
+	"url-path-plugins":"/plugins",
+	"url-path-favicon":"/wp-content/themes/azbnbasetheme/favicon",
+	"url-path-favicon":"/favicon"
+}

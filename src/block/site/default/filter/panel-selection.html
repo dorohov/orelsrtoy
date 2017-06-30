@@ -1,0 +1,50 @@
+<div class="{{filter_prefix}}block">
+	<div class="row {{filter_prefix}}row  is--wrap  is--gutter">
+		<div class="cols {{filter_prefix}}cols  {{filter_mod}}  is--area">
+			[[azbntple 
+				tpl="/src/block/site/default/filter/select.html" 
+				filter_prefix="filter-item__"
+				filter_label="Район"
+				filter_id="fil_area" 
+				filter_option="<option>Зареченский</option><option>Болховский</option><option>Любой</option>"
+			]]
+		</div>
+		<div class="cols {{filter_prefix}}cols  {{filter_mod}}">
+			[[azbntple 
+				tpl="/src/block/site/default/filter/select.html" 
+				filter_prefix="filter-item__"
+				filter_label="Количество комнат"
+				filter_id="fil_area" 
+				filter_option="<option>Однокомнатная</option><option>Двухкоматная</option><option>Трехкомнатная</option>"
+			]]
+		</div>
+		<div class="cols {{filter_prefix}}cols  {{filter_mod}}  is--multi">
+			[[azbntple 
+				tpl="/src/block/site/default/filter/select-multi.html" 
+				filter_prefix="filter-item__"
+				filter_label="Этаж"
+				filter_id="fil_floor" 
+				filter_option="<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option>"
+			]]
+		</div>
+		<div class="cols {{filter_prefix}}cols  {{filter_mod}}  is--range">
+			[[azbntple 
+				tpl="/src/block/site/default/filter/range.html" 
+				filter_prefix="filter-item__"
+				filter_label="Стоимость"
+				filter_id="fil_cost" 
+			]]
+		</div>
+		<div class="cols {{filter_prefix}}cols  is--btn  {{filter_mod}}">
+			<div class="{{filter_prefix}}btn  {{filter_mod}}">
+				[[azbntple 
+					tpl="/src/block/site/default/button/button.html" 
+					button_class="is--red  is--small  is--download" 
+					button_prefix="btn__" 
+					button_name="Показать 51 вариант"
+					button_icon="btn-arrow-bottom"
+				]]	
+			</div>
+		</div>
+	</div>
+</div> 

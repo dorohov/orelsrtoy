@@ -1,0 +1,84 @@
+<div class="content-block {{class}}" role="main">
+	<div class="container content-block__container">
+		[[azbntple 
+			tpl="/src/block/site/default/breadcrumb/level4.html" 
+			bread_prefix="breadcrumb__"
+			level_1="Микрорайоны"
+			level_1_link="/areas.html"
+			level_2="Болховский микрорайон"
+			level_2_link="/area-bolhov.html"
+			level_3="ул. Зеленина, дом 8"
+			level_3_link="/houses-item.html"
+			level_4="Однокомнатная квартира"
+		]]
+		<div class="{{prefix_block}}info">
+			<div class="row  is--wrap is--gutter">
+				<div class="cols  is--cols-6 {{prefix_block}}cols  is--preview">
+					<img src="{{url-path-img}}/temp/apartment-item1.jpg" alt="">
+				</div>
+				<div class="cols  is--cols-6 {{prefix_block}}cols  is--info">			
+					[[azbntple 
+						tpl="/src/block/site/default/page-header/group.html" 
+						header_prefix="page-header__" 
+						header_mod="is--cols" 
+						header="Однокомнатная квартира"
+						header_level="h1"
+						header_small_level="h2"
+						header_small="ул. Зеленина, дом 8"
+					]]
+					<div class="{{apartment_prefix}}info">
+						<div class="{{apartment_prefix}}area">
+							<span class="{{apartment_prefix}}area-item">34.85</span>&nbsp;<span class="{{apartment_prefix}}area-measure">м<sup>2</sup></span> Общая площадь
+						</div>
+						<div class="{{apartment_prefix}}item">
+							<div class="{{apartment_prefix}}item-row">
+								<div class="{{apartment_prefix}}item-name">Подъезд:</div>
+								<div class="{{apartment_prefix}}item-val">5</div>
+							</div>
+						</div>
+						<div class="{{apartment_prefix}}item">
+							<div class="{{apartment_prefix}}item-row">
+								<div class="{{apartment_prefix}}item-name">Этаж:</div>
+								<div class="{{apartment_prefix}}item-val">4</div>
+							</div>
+						</div>
+						<div class="{{apartment_prefix}}item">
+							<div class="{{apartment_prefix}}item-row">
+								<div class="{{apartment_prefix}}item-name">№ квартиры:</div>
+								<div class="{{apartment_prefix}}item-val">201</div>
+							</div>
+						</div>
+						<div class="{{apartment_prefix}}item  is--cost">
+							<div class="{{apartment_prefix}}item-row">
+								<div class="{{apartment_prefix}}item-name">Стоимость:</div>
+								<div class="{{apartment_prefix}}item-val  is--cost">
+									1 919 911<span class="{{apartment_prefix}}item-ruble">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="ruble" ]]</span>
+									<span class="{{apartment_prefix}}item-cost-area">34 260 <span class="{{apartment_prefix}}item-ruble-area">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="ruble" ]]</span>/м<sup>2</sup></span>
+								</div>
+							</div>
+						</div>
+						<div class="{{apartment_prefix}}item  is--btn">
+							<div class="{{apartment_prefix}}item-row  is--btn">
+								<div class="{{apartment_prefix}}item-cols">
+									<a href="javascript:print();" class="{{apartment_prefix}}btn-print">
+										[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="print" ]]
+									</a>
+								</div>
+								<div class="{{apartment_prefix}}item-cols">
+									[[azbntple 
+										tpl="/src/block/site/default/button/link.html" 
+										button_class="is--red  is--mini"
+										button_href="/houses-design.html"
+										button_prefix="btn__" 
+										button_name="Посмотреть виды отделки"
+										button_icon="btn-arrow-left"
+									]]	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

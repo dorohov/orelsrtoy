@@ -1,0 +1,119 @@
+.contacts-panel__{
+	&block{}
+	&row{}
+	&cols{
+		&.is--cols-4{
+			@media @media-size-sm-p {
+				.makeCols(12, 12);
+			}
+		}
+		&.is--cols-8{
+			@media @media-size-sm-p {
+				.makeCols(12, 12);
+			}
+		}
+	}
+	&map{
+		width: 100%;
+		height: 100%;
+		@media @media-size-xs-l {
+			height: 250px;
+		}
+		@media @media-size-xs-p {
+			height: 350px;
+		}
+		@media @media-size-sm-p {
+			height: 500px;
+		}
+	}
+	&map-container{
+		position: relative;
+		background-color: fadeout(@white, 50%);
+		width: 210px;
+		padding: 10px 0px;	
+		&.is--small{
+			padding: 5px 0;
+			width: 150px;
+		}
+	}
+	&map-layout{
+		color: @blue-dark;
+		position: relative;
+		z-index: 2;
+		font-weight: 700;
+		display: block;
+		padding-left: 50px;
+		font-size: @b-fs + 6;	
+		&.is--small{
+			font-size: @b-fs;
+			padding-left: 30px;
+		}
+	}
+	&map-icon{
+		position: absolute;
+		z-index: 1;
+		width: 76px;
+		height: 76px;
+		top: 50%;
+		left: 0;
+		transform: translate(-50%,-50%);
+		svg{display: block;}	
+		&.is--small{
+			width: 44px;
+			height: 44px;
+		}
+	}
+}
+.contscts-item__{
+	&block{
+		@media @media-device {margin-bottom: 35px;}
+		@media @media-screen {margin-bottom: 2.4vw;}
+		&:last-child{margin-bottom: 0}
+		&.is--inline{
+			@media @media-screen {
+				margin-top: 30px;
+			}
+		}
+	}
+	&heading{
+		font-weight: 700;
+		.calcFontSize(18, 22, 320, 1680);
+		.calcLineHeight(18, 22, 320, 1680);
+		letter-spacing: 0.7px;
+		color: @b-color;
+		@media @media-device {margin-bottom: 25px;}
+		@media @media-screen {margin-bottom: 1.7vw;}
+	}
+	&item{
+		position: relative;
+		display: block;
+		padding-left: 30px;
+		margin-bottom: 15px;
+		font-size: @b-fs;
+		line-height: @b-lh - 6;
+		&, &:hover, &:focus, &[href^="tel:"], &[href^="tel:"]:hover, &[href^="tel:"]:focus, &[href^="mailto:"], &[href^="mailto:"]:hover, &[href^="mailto:"]:focus{color: @b-color;}
+		&:last-child{margin-bottom: 0}
+		&.is--inline{
+			padding-left: 0px;
+			margin-bottom: 0px;
+			display: inline-block;
+		}
+	}
+	&item-icon{
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 20px;
+		height: 20px;
+		transform: translateY(-50%);
+		color: @blue;
+	}
+	&row{
+		@media @media-size-xxl {
+			justify-content: space-between;
+		}
+	}
+	&cols{
+		color: @blue;
+	}
+}

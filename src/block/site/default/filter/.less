@@ -1,0 +1,132 @@
+.filter-panel__{
+	&block{
+		padding-top: 10px;
+	}
+	&row{
+		align-items: center;
+		@media @media-size-sm {justify-content: space-between;}
+	}
+	&cols{
+		&.is--commerc{
+			@media @media-screen {.makeCols(3, 12);}
+			@media @media-size-mdl {.makeCols(4, 12);}
+		}
+		&.is--btn{
+			@media @media-device {.makeCols(12, 12);}
+			@media @media-size-mdl {.makeCols(12, 12);}
+		}
+		&.is--selection{
+			@media @media-screen {.makeCols(3, 12);}
+			&.is--area{
+				@media @media-size-md {.makeCols(2, 12);}
+			}
+			&.is--multi{
+				@media @media-screen {.makeCols(2, 12);}
+				@media @media-size-md {.makeCols(3, 12);}
+			}
+			&.is--range{
+				@media @media-size-xs {.makeCols(12, 12);}
+				@media @media-size-sm {.makeCols(6, 12);}
+				@media @media-screen {.makeCols(4, 12);}
+			}
+			&.is--btn{
+				.makeCols(12, 12);
+				text-align: center;
+			}
+		}
+	}
+	&btn{
+		@media @media-device {padding-top: 25px;}
+		@media @media-screen {padding-top: 2.3vw;}
+		
+	}
+}
+.filter-item__{
+	&heading{
+		display: block;
+		color: @green;
+		.calcFontSize(20, 28, 320, 1680);
+		.calcLineHeight(20, 28, 320, 1680);
+		margin-bottom: 15px;
+		span{font-weight: 400;}
+	}
+	&select-box{
+		position: relative;
+		overflow: hidden;
+		width: ~"calc(100% - 15px)";
+		html.msie &{
+			width: ~"calc(100% - 20px)";
+		}
+		&.is--border{
+			padding-left: 20px;
+		}
+		@media @media-device {
+			html.safari &{width: ~"calc(100% - 11px)";}			
+		}
+	}
+	&select-row{
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: -10px;
+		margin-left: -5px;
+		margin-left: -5px
+	}
+	&select-cols{
+		padding-top: 11px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	&select{
+		position: relative;
+		z-index: 5;
+		width: ~"calc(100% + 15px)";
+		display: block;
+		border: 0;
+		outline: 0;
+		background-color: fadeout(@white, 100%);
+		padding-left: 15px;
+		html.msie &{
+			width: ~"calc(100% + 20px)";
+		}
+		html.safari &{width: ~"calc(100% + 11px)";}		
+	}
+	&select-label{
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		font-size: @b-fs - 4px;
+	}
+	&select-icon{
+		width: 15px;
+		height: 15px;
+		color: @green;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		svg{display: block;} 
+		&.is--border{
+			left: 20px;
+		}
+	}
+	&range-block{
+		padding: 0 20px;
+		position: relative;
+		&::before,
+		&::after{
+			font-size: @b-fs - 4px;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		&::before{
+			content: "от";
+			left: 0;
+		}
+		&::after{
+			content: "до";
+			right: 0;
+		}
+	}
+}

@@ -1,0 +1,69 @@
+<div class="modal fade {{modals_class}}" id="{{modals_id}}" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog {{modals_prefix}}dialog">
+		<div class="modal-body {{modals_prefix}}body" >
+			<button type="button" class="btn-site btn-close modal-close" data-dismiss="modal" aria-hidden="true">
+				[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="cancel" class="icon-cancel"]]
+			</button>
+			<div class="modal-content {{modals_prefix}}content">
+				<div class="price-list__modal">
+					<div class="price-list__modal-scroller">
+						<div class="mCustomScrollbar scroller" data-mcs-theme="blue">
+							<div class="table-responsive">
+								<table class="table price-list__table">
+									<thead>
+										<tr>
+											<th>
+												<br><span>Наименование услуги</span>
+											</th>
+											<th>
+												Цена<span>/руб.</span>				
+												<br><span>перв./повторн. прием</span>
+											</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Авторефрактометрия</td>
+											<td>280</td>
+											<td><button class="btn-site btn-basket is--remove">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="basket-remove" ]]</button></td>
+										</tr>
+										<tr>
+											<td>Инъекции п/к в висок</td>
+											<td>220</td>
+											<td><button class="btn-site btn-basket is--remove">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="basket-remove" ]]</button></td>
+										</tr>
+										<tr>
+											<td>Инъекции п/к в висок</td>
+											<td>220</td>
+											<td><button class="btn-site btn-basket is--remove">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="basket-remove" ]]</button></td>
+										</tr>
+										<tr>
+											<td>Инъекции п/к в висок</td>
+											<td>220</td>
+											<td><button class="btn-site btn-basket is--remove">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="basket-remove" ]]</button></td>
+										</tr>
+										<tr>
+											<td>Инъекции п/к в висок</td>
+											<td>220</td>
+											<td><button class="btn-site btn-basket is--remove">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="basket-remove" ]]</button></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="price-list__caption-name">Всего 5 услуг в корзине на сумму: 4580 р.</div>						
+				</div>
+				[[azbntple 
+					tpl="/src/block/site/default/form/fio-tel.html"
+					heading_form="Заказать услуги"
+					note_form="  "
+					prefix_form="form__"
+					class_form="block "
+					btn_name="Заказать"
+				]] 
+			</div> 
+		</div>
+	</div>
+</div>

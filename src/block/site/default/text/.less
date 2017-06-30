@@ -1,0 +1,128 @@
+.text-container__{
+	&block{}
+	&row{		
+		&.is--center{justify-content: center;}
+	}
+	&cols{
+		&.is--cols-7{
+			@media @media-device {.makeCols(12, 12);}
+		}
+	}
+	&text{
+		//text-align: justify;
+		&.cols-5{
+			@media @media-screen {
+				.makeCols(5, 12);
+			}
+		}
+		&.cols-6{
+			@media @media-screen {
+				.makeCols(6, 12);
+			}
+		}
+		&.cols-7{
+			@media @media-screen {
+				.makeCols(7, 12);
+			}
+		}
+		&.cols-8{
+			@media @media-screen {
+				.makeCols(8, 12);
+			}
+		}
+		&.column-2{
+			@media @media-screen {
+				.multipleColumn(2, 60); 
+			}
+		}
+		div, p{
+			@media @media-device{margin-bottom: 15px;}
+			@media @media-screen{margin-bottom: 20px;}
+		}
+		ol, ul, .table{
+			@media @media-device{margin-bottom: 20px;}
+			@media @media-screen{margin-bottom: 25px;}
+		}
+		ol, ul{
+			> li{margin-bottom: 5px;}
+		}
+		h2, h3{
+			@media @media-device{margin-bottom: 15px;}
+			@media @media-screen{margin-bottom: 1.2vw;}
+		}
+		*{
+			> &:last-child{margin-bottom: 0}
+			& + h2{
+				@media @media-device{padding-top: 30px;}
+				@media @media-screen{padding-top: 1.5vw;}
+			}
+			& + h3{
+				@media @media-device{padding-top: 20px;}
+				@media @media-screen{padding-top: 0.9vw;}
+			}
+		}
+		& > *{
+			&.img--left{ 
+				@media @media-notsmart {
+					float: left;
+					padding: 0px 20px 0px 0;
+				}
+			}
+			&.img--right{ 
+				@media @media-notsmart {
+					float: right;
+					padding: 0px 0px 0 20px ;
+				}
+			}
+		}	
+		.table{ 
+			border: 0; 
+			thead td,
+			thead th,
+			th{
+				font-weight: 700;
+				color: @b-color-a;
+				//text-align: center;
+				.calcFontSize(16, 20, 320, 1680);
+				.calcLineHeight(22, 26, 320, 1680);
+
+			}
+			td, th{
+				border: 0;
+				border-bottom: 1px solid @white8;
+				padding: 10px 10px;
+				vertical-align: middle;
+			}
+			tr:last-child{
+				td{
+					border: 0;				
+				}
+			}
+		}
+	}
+}
+.text-container__text blockquote,
+blockquote {
+	padding: 0 0 0 50px;
+	font-style: italic;
+	font-size: @b-fs - 2px;
+	position: relative;
+	border-left: 2px dotted @green;
+	*{
+		margin-bottom: 10px;
+	}
+	/*.quotes{
+		display: block;
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		&.before{
+			top: 0;
+			left: 0;
+		}
+		&.after{
+			bottom: 0;
+			right: 0;
+		}
+	}*/
+}

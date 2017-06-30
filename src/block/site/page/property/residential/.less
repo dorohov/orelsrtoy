@@ -1,0 +1,86 @@
+.houses-page{}
+._hsp__{
+	&cols{
+		&.is--cols-4{
+			@media @media-size-xs-l {
+				.makeCols(6, 12);
+			} 
+			@media @media-size-sm {
+				.makeCols(6, 12);
+			} 
+			@media @media-size-md {
+				.makeCols(6, 12);
+			} 
+		}
+	}
+}
+._arp__{
+	&row{
+		@media @media-size-sm {justify-content: center;}
+	}
+	&cols{
+		&.is--cols-4{
+			@media @media-size-xs-l {
+				.makeCols(12, 12);
+			} 
+			@media @media-size-sm {
+				.makeCols(12, 12);
+			} 
+			@media @media-size-sm-l {
+				.makeCols(4, 12);
+			} 
+		}
+	}
+}
+._aip__{
+	&container{
+		min-height: inherit;
+		&.is--top{padding-bottom: 0}
+		&.is--middle{padding-top: 0; padding-bottom: 0}
+		&.is--bottom{
+			@media @media-screen {
+				padding-top: 4.1vw;
+			}
+		}
+	}
+}
+._hsip__{
+	&cols{
+		&.is--cols-8{
+			@media @media-device {
+				.makeCols(12, 12);
+			}
+		}
+		&.is--cols-4{			
+			@media @media-device {
+				order: -1;
+				.makeCols(12, 12);
+			}
+		}
+	}
+	&info{
+		@media @media-screen {
+			margin-bottom: 6.5vw;
+		}
+	}
+}
+._artp__{
+	&cols{
+		&.is--cols-6{
+			&.is--preview{
+				@media @media-size-xs {
+					order: 1;
+				}
+				@media print{img{margin: 0 auto; height: 400px;} }
+			}
+			&.is--info{}
+		}
+
+	}
+	&info{
+		@media @media-screen {
+			padding-top: 2.5vw;
+			padding-bottom: 2.5vw;
+		}
+	}
+}

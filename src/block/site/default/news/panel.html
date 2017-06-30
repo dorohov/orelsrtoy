@@ -1,0 +1,45 @@
+<div class="{{news_prefix}}block">
+	<div class="{{news_prefix}}container container">
+		[[azbntple 
+			tpl="/src/block/site/default/page-header/heading-link.html" 
+			header_prefix="page-header__" 
+			header_level="h2"
+			header="Новости"
+			header_color=" is--white"
+			header_link_href="/news.html"
+			header_link_name="Все записи"
+		]]	
+		<div class="row {{news_prefix}}row  is--wrap  is--gutter">
+			<div class="cols {{news_prefix}}cols  is--cols-4">
+				[[azbntple
+					tpl="/src/block/site/default/news/item-short.html"
+					news_prefix="news-item__" 
+					news_link="/news-item.html"
+					news_date="05. 04. 2017"
+					news_heading="Предварительное бронирование"
+					news_note="Открыто предварительное бронирование квартир по адресу: Бульвар Молодежи, 5"
+				]]	
+			</div>
+			<div class="cols {{news_prefix}}cols  is--cols-4">
+				[[azbntple
+					tpl="/src/block/site/default/news/item-short.html"
+					news_prefix="news-item__" 
+					news_link="/news-item.html"
+					news_date="05. 04. 2017"
+					news_heading="Открытие нового офиса продаж в микрорайоне Зареченский"
+					news_note="Открыто предварительное бронирование квартир по адресу: Бульвар Молодежи, 5"
+				]]	
+			</div>
+			<div class="cols {{news_prefix}}cols  is--cols-4">
+				[[azbntple
+					tpl="/src/block/site/default/news/item-short.html"
+					news_prefix="news-item__" 
+					news_link="/news-item.html"
+					news_date="05. 04. 2017"
+					news_heading="Старт продаж"
+					news_note="Новый дом в микрорайоне Болховский уже в продаже!"
+				]]	
+			</div>
+		</div>
+	</div>
+</div> 

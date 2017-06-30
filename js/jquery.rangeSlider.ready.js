@@ -1,0 +1,1 @@
+"use strict";$(function(){$("#fil_cost").ionRangeSlider({type:"double",grid:!1,min:9e5,max:45e5,from:9e5,to:45e5,step:1e5})});

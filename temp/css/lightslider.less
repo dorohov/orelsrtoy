@@ -1,0 +1,409 @@
+@site-name : "site";
+@import "@{site-name}/var.less";
+.lSSlideOuter {
+    overflow: hidden;
+    user-select: none
+}
+.lightSlider{	
+    overflow: hidden;
+    margin: 0;
+	&::before,
+	&::after {
+		content: " ";
+		display: table;
+	}
+}
+.lSSlideWrapper {
+    max-width: 100%;
+    //overflow: hidden;
+    position: relative;
+    @media @media-screen {
+        height: 34.55vw!important;
+        max-height: 640px;
+    }   
+    & > .lightSlider:after {
+	    clear: both;
+	}
+	.lSSlide {
+	    -webkit-transform: translate(0px, 0px);
+	    -ms-transform: translate(0px, 0px);
+	    transform: translate(0px, 0px);
+	    transition-property: transform,height;
+	    transition-duration: inherit !important;
+	    transition-timing-function: inherit !important;
+	    cursor: pointer;
+	    //styled
+	    .lslide{
+			@media @media-screen {
+				max-height: 640px!important;
+				height: 34.6vw!important;				
+			}
+	    }
+	}
+	.lSFade {
+	    position: relative;
+	    & > * {
+		    position: absolute !important;
+		    top: 0;
+		    left: 0;
+		    z-index: 9;
+		    margin-right: 0;
+		    width: 100%;
+		    &.active {z-index: 10;}
+		}
+	}
+	&.usingCss .lSFade > * {
+	    opacity: 0;
+	    transition-delay: 0s;
+	    transition-duration: inherit !important;
+	    transition-property: opacity;
+	    transition-timing-function: inherit !important;
+	    &.active {opacity: 1;}
+	}
+}
+/** /!!! End of core css Should not edit !!!/**/
+
+/* Pager */
+.lSSlideOuter .lSPager.lSpg {
+    margin: 10px 0 0;
+    padding: 0;
+    text-align: center;
+}
+.lSSlideOuter .lSPager.lSpg > li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 5px;
+}
+.lSSlideOuter .lSPager.lSpg > li a {
+    background-color: #222222;
+    border-radius: 30px;
+    display: inline-block;
+    height: 8px;
+    overflow: hidden;
+    text-indent: -999em;
+    width: 8px;
+    position: relative;
+    z-index: 99;
+    -webkit-transition: all 0.5s linear 0s;
+    transition: all 0.5s linear 0s;
+}
+.lSSlideOuter .lSPager.lSpg > li:hover a, .lSSlideOuter .lSPager.lSpg > li.active a {
+    background-color: #428bca;
+}
+.lSSlideOuter .media {
+    opacity: 0.8;
+}
+.lSSlideOuter .media.active {
+    opacity: 1;
+}
+/* End of pager */
+
+/** Gallery */
+.lSSlideOuter {
+	.lSPager.lSGallery {
+	    list-style: none outside none;
+	    padding-left: 0;
+	    margin: 0;
+	    overflow: hidden;
+	    transform: translate3d(0px, 0px, 0px);
+	    user-select: none;
+	    //styled
+	    display: flex;
+	    flex-wrap: wrap;
+	    align-items: flex-start;
+		&:before, 
+		&:after {
+		    content: " ";
+		    display: table;
+		}
+		&:after {
+		    clear: both;
+		}
+	    li {
+		    //overflow: hidden;
+		    position: relative;
+		    //styled
+		    @media @media-screen {
+			    max-height: 155px;
+		   		/*margin: 1.5vw 0!important;
+		   		margin: 30px 0!important;*/
+		    	height: 8.4vw!important;
+		    }
+		    &.active{}
+		}
+		a{
+			display: block;			
+		}
+		img {
+		    display: block;
+		    height: auto;
+		    max-width: 100%;
+		}
+	}
+}
+/* End of Gallery*/
+
+/* slider actions */
+.lSAction {
+	& > a {		
+		position: absolute; 
+		transition: @trs-site;
+		cursor: pointer;
+		width: 30px;
+		height: 20px;
+	    &::before,
+	    &::after{
+			position: absolute;
+			content: '';
+			display: block;
+			background: @green;
+			width: 20px;
+			height: 3px;
+			transform-origin: center;
+			transition: @trs-site;
+			top: 50%;    
+		}
+		&:hover{
+			&::before{
+			}
+		}
+	    &.disabled {
+		    pointer-events: none;
+		}
+	}
+	& > .lSPrev {
+		&::before{
+			transform: translate(-5%, -50%) rotate(-45deg);
+    		left: 0;
+		}
+		&::after{
+			transform: translate(5%, -50%) rotate(45deg);
+    		right: 0;
+		}
+	}
+	& > .lSNext {
+		&::before{
+			transform: translate(-5%, -50%) rotate(45deg);
+    		left: 0;
+		}
+		&::after{
+			transform: translate(5%, -50%) rotate(-45deg);
+    		right: 0;
+		}
+	}
+}
+.cS-hidden {
+    height: 1px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    overflow: hidden;
+}
+/* vertical */
+.lSSlideOuter.vertical {
+    position: relative;
+    //styled
+    @media @media-screen {
+		padding: 0 0 0 7.2vw!important;
+	}
+}
+.lSSlideOuter.vertical.noPager {
+    padding-right: 0px !important;
+}
+.lSSlideOuter.vertical .lSPager-block{
+	position: absolute;
+    @media @media-screen {
+    	max-width: 225px;
+    	width: 12.2vw!important;
+    	overflow: hidden;
+    	top: 35px;
+    	bottom: 35px;
+    	left: 0;
+    }	
+}
+.lSSlideOuter.vertical .lSGallery {
+    position: absolute !important;
+    left: 0;
+    top: 0;
+    //styled
+    @media @media-screen {
+    	max-width: 225px;
+    	width: 12.2vw!important;
+    }
+}
+.lSSlideOuter.vertical .lightSlider > * {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* vertical controlls */
+.lSSlideOuter.vertical .lSAction > a {
+    
+    z-index: 100;
+    //styled
+    @media @media-screen {left:-4.5vw;}
+}
+.lSSlideOuter.vertical .lSAction > .lSNext {
+    bottom: 0px;
+    top: inherit;
+}
+.lSSlideOuter.vertical .lSAction > .lSPrev {
+	top: 0px;
+}
+/* vertical */
+
+
+/* Rtl */
+.lSSlideOuter.lSrtl {
+    direction: rtl;
+}
+.lSSlideOuter .lightSlider, .lSSlideOuter .lSPager {
+    padding-left: 0;
+    list-style: none outside none;
+}
+.lSSlideOuter.lSrtl .lightSlider, .lSSlideOuter.lSrtl .lSPager {
+    padding-right: 0;
+}
+.lSSlideOuter .lightSlider > *,  .lSSlideOuter .lSGallery li {
+    float: left;
+}
+.lSSlideOuter.lSrtl .lightSlider > *,  .lSSlideOuter.lSrtl .lSGallery li {
+    float: right !important;
+}
+/* Rtl */
+
+@-webkit-keyframes rightEnd {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: -15px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+@keyframes rightEnd {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: -15px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+@-webkit-keyframes topEnd {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: -15px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+@keyframes topEnd {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: -15px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+@-webkit-keyframes leftEnd {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: 15px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+@keyframes leftEnd {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: 15px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+@-webkit-keyframes bottomEnd {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: -15px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+@keyframes bottomEnd {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: -15px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+.lSSlideOuter .rightEnd {
+    animation: rightEnd 0.3s;
+    position: relative;
+}
+.lSSlideOuter .leftEnd {
+    animation: leftEnd 0.3s;
+    position: relative;
+}
+.lSSlideOuter.vertical .rightEnd {
+    animation: topEnd 0.3s;
+    position: relative;
+}
+.lSSlideOuter.vertical .leftEnd {
+    animation: bottomEnd 0.3s;
+    position: relative;
+}
+.lSSlideOuter.lSrtl .rightEnd {
+    animation: leftEnd 0.3s;
+    position: relative;
+}
+.lSSlideOuter.lSrtl .leftEnd {
+    animation: rightEnd 0.3s;
+    position: relative;
+}
+/*/  GRab cursor */
+.lightSlider.lsGrab > * {
+  cursor: grab;
+}
+.lightSlider.lsGrabbing > * {
+  cursor: move;
+  cursor: grabbing;
+}

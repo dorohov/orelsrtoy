@@ -1,0 +1,249 @@
+.btn__{
+	&block{
+		text-align: center;
+		@media @media-device {padding: 30px;}
+		@media @media-screen {padding: 1.8vw;}		
+	}
+	&item{
+		display: inline-block;
+		outline: none;
+		background: none;
+		text-decoration: none;
+		transition: @trs-btn;
+		//
+		border-width: 2px;
+		border-style: solid;
+		border-color: @btn-border-color;
+		position: relative;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: @btn-color;
+		font-size: @b-fs - 2px;
+		letter-spacing: 3px;
+		@media @media-device {
+			padding: 10px ~"calc(30px + 60px)" 10px 30px;
+		}
+		@media @media-screen {
+			padding: .8vw ~"calc(2.8vw + 60px)" .8vw 3.4vw;
+		}
+		&:hover{
+			color: @btn-color-hover;
+			background-color: @btn-bg-hover; 
+		}
+		&.is--red{
+			border-color: @red;
+			&:hover{
+				background-color: @red;
+			}
+		}
+		&.is--white{
+			border-color: @white;
+			background-color: @white;
+			&:hover{
+				border-color: @btn-bg-hover;
+				background-color: @white;
+				color: @btn-color;
+			}
+		} 
+		&.is--block{
+			display: block;
+			width: 100%;
+			text-align: center;
+		}
+		&.is--mini{	
+			@media @media-device {
+				letter-spacing: 1px;
+				padding: 10px ~"calc(30px + 60px)" 10px 20px;
+			}
+			@media @media-screen {
+				padding: .4vw ~"calc(2.8vw + 60px)" .4vw 3.4vw;
+			}
+		}
+		&.is--small{
+			font-size: @b-fs - 4px;
+			@media @media-device-lg {
+				letter-spacing: 1.5px;
+				padding: 10px ~"calc(20px + 50px)" 10px 20px;
+				&.is--navbar{
+					padding: 10px 15px;
+					display: block;
+					width: 100%;
+					text-align: center;
+				}
+			}
+			@media @media-screen-lg {
+				letter-spacing: 2.5px;
+				padding: .4vw ~"calc(1.6vw + 50px)" .4vw 1.25vw;
+			}			
+		}
+		&.is--link{
+			border: none;
+			color: @btn-link-color;
+			padding: 0px 35px 0px 0px;
+			.calcFontSize(16, 23, 320, 1680);
+			.calcLineHeight(22, 28, 320, 1680);
+			
+			@media @media-device {
+				padding: 0 30px 0 0;
+				letter-spacing: 1.5px;
+			}
+			@media @media-screen {
+				padding: 0 70px 0 0;
+				letter-spacing: 4px;
+			}
+			&:hover{
+				background: none;
+				color: @btn-link-color;
+			}
+			&.is--blue{
+				color: @blue;
+			}
+			&.is--white{
+				color: @white;
+				background: none;
+			}
+			&.is--news{
+				.calcFontSize(16, 18, 320, 1680);
+				.calcLineHeight(22, 23, 320, 1680);
+				letter-spacing: 3.5px;
+				padding: 0 35px 0 0;
+			}
+		}
+		&.is--form{
+			@media @media-device {
+				padding: 10px ~"calc(30px + 60px)" 10px 30px;
+			}
+			@media @media-screen {
+				padding: 18.5px ~"calc(2.8vw + 60px)" 18.5px 3.4vw;
+				font-size: @b-fs;
+			}
+			@media @media-size-mdl{padding: 13.5px ~"calc(2.8vw + 60px)" 13.5px 3.4vw;}
+
+		}
+	}
+	&name{display: block;}
+	&icon{
+		position: absolute;
+		width: 23px;
+		height: 23px;
+		top: ~"calc(50% - 11.5px)";
+		right: 20px;
+		transition: transform 0.35s;
+		svg{display: block;}
+		.btn__item:hover &{
+			transform: scale(-1, 1);
+		}
+		.btn__item.is--white &{
+			width: 18px;
+			height: 18px;
+			top: ~"calc(50% - 9px)";			
+		}
+		.btn__item.is--download &{
+			width: 15px;
+			height: 15px;
+			top: ~"calc(50% - 7.5px)";	
+			right: 22px;		
+		}
+		.btn__item.is--small &{
+			width: 14px;
+			height: 14px;
+			top: ~"calc(50% - 7px)";
+			right: 17px;		
+		}
+		.btn__item.is--download:hover &{
+			transform: scale(1, -1);
+		}
+		.btn__item.is--link &{
+			transform: none;
+			right: 5px;
+			transition: @trs-btn;
+			@media @media-device {
+				top: ~"calc(50% - 10px)";
+				width: 20px;
+				height: 20px;				
+			}
+			@media @media-screen {
+				top: ~"calc(50% - 15px)";
+				width: 30px;
+				height: 30px;
+			}
+		}
+		.btn__item.is--link.is--news &{
+			width: 21px;
+			height: 21px;
+			top: ~"calc(50% - 10.5px)";
+		}
+		.btn__item.is--link:hover &{
+			right: 0px;
+		}
+		.btn__item.is--navbar &{
+			@media @media-device-lg {display: none;}			
+		}
+	}
+	&line{
+		position: absolute;
+		top: 10%;
+		bottom: 10%;
+		width: 1px;
+		right: 60px;
+		background-color: @btn-border-color;
+		transition: @trs-btn;
+		.btn__item:hover &{
+			background-color: @white;
+		}
+		.btn__item.is--red &{
+			background-color: @red;			
+		}
+		.btn__item.is--red:hover &{
+			background-color: @white;			
+		}
+		.btn__item.is--white &{
+			background-color: @btn-border-color;			
+		}
+		.btn__item.is--white:hover &{
+			background-color: @btn-border-color;			
+		}
+		.btn__item.is--link.is--white &,
+		.btn__item.is--link.is--white:hover &{
+			background-color: @white;			
+		}
+		.btn__item.is--small &{
+			right: 50px;			
+		}
+		.btn__item.is--link &{
+			bottom: inherit;
+			transform-origin: right center;
+			transform: scale(0, 1);
+			background-color: @btn-bg-hover;
+			@media @media-device {	
+				height: 2px;
+				right: 10px;
+				top: ~"calc(50% - 1px)";
+				width: ~"calc(100% - 10px)";	
+			}
+			@media @media-screen {
+				right: 20px;
+				height: 4px;
+				width: ~"calc(100% - 20px)";
+				top: ~"calc(50% - 2px)";
+			}
+		}
+		.btn__item.is--link.is--news &{
+			top: ~"calc(50% - 1.5px)";
+			width: ~"calc(100% - 15px)";
+			height: 3px;
+			right: 15px;
+		}
+		.btn__item.is--link:hover &{
+			transform: scale(1, 1);
+			background-color: @btn-bg-hover;
+		}
+		.btn__item.is--link.is--blue &,
+		.btn__item.is--link.is--blue:hover &{
+			background-color: @blue;
+		}
+		.btn__item.is--navbar &{
+			@media @media-device-lg {display: none;}
+		}
+	}
+}

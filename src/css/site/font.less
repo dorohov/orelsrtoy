@@ -1,0 +1,47 @@
+.include-custom-font(
+	@family: @geometria, 
+	@src-name: @geometria, 
+	@weight: normal, 
+	@style: normal
+	){
+	@font-face{			
+		font-family: "@{family}";			
+		src:	url('@{url-path-fonts}/@{src-name}.woff2') format('woff2'),
+				url('@{url-path-fonts}/@{src-name}.woff') format('woff');
+		font-weight: @weight;
+		font-style: @style;		
+	}
+}
+.include-custom-icon(@family: @icon, @weight: normal, @style: normal){
+	@font-face{			
+		font-family: "@{family}";			
+		src: url('@{url-path-fonts}/@{family}.woff') format('woff');
+		font-weight: @weight;
+		font-style: @style;		
+	}
+}
+
+.include-custom-font(
+	@family: @roboto-cond,
+	@src-name: @roboto-cond,
+	@weight: 400, 
+	@style: normal
+	);
+.include-custom-font(
+	@family: @roboto-cond,
+	@src-name: @roboto-cond-ital,
+	@weight: 400, 
+	@style: italic
+	);
+.include-custom-font(
+	@family: @roboto-cond,
+	@src-name: @roboto-cond-bold,
+	@weight: 700, 
+	@style: normal
+	);
+.include-custom-font(
+	@family: @bebas,
+	@src-name: @bebas,
+	@weight: normal, 
+	@style: normal
+	);
