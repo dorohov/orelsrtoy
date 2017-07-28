@@ -159,7 +159,7 @@
 				//console.log(opt.attr('value'));
 				sel.val(opt.attr('value'));
 				sel.trigger('blur.azbn');
-				alert(opt.attr('value'));
+				//alert(opt.attr('value'));
 			});
 			
 			
