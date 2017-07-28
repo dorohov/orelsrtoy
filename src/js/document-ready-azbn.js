@@ -131,6 +131,73 @@
 			
 		});
 		
+		//azbn__api__property-selection__form data-target=".azbn__api__property-selection__result"
+		//azbn__api__property-selection__result
+		//azbn__api__property-selection__result__item data-building-id="0"
+		
+		$('.azbn__api__property-selection__form').each(function(index){
+			
+			var form = $(this);
+			
+			form.find('input, select').on('change keyup blur', function(event){
+				form.trigger('submit.azbn');
+			});
+			
+			form.find('select option').on('click', function(event){
+				$(this).closest('select').trigger('blur');
+			});
+			
+			form.on('submit.azbn', function(event){
+				event.preventDefault();
+				
+				var _form = form.clone(true);
+				
+				var _input_method = $('<input/>', {
+					type : 'hidden',
+					name : 'method',
+					value : 'iblocks/property/selection',
+				});
+				
+				_input_method.appendTo(_form);
+				
+				var _form_s = _form.serialize();
+				
+				$.post('/api/', _form_s, function(data){
+					
+					_form.empty().remove();
+					
+					data = JSON.parse(data);
+					
+					//console.log(data);
+					
+					if(data.response && data.response.buildings) {
+						
+						$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item').hide();
+						
+						for(var i in data.response.buildings) {
+							
+							(function(b_id, b){
+								
+								$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item[data-building-id="' + b_id + '"]').fadeIn('fast');
+								
+							})(i, data.response.buildings[i]);
+							
+						}
+						
+					} else {
+						
+						$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item').fadeIn('fast');
+						
+					}
+					
+				})
+				
+			})
+			
+		});
+		
+		
+		
 		$(document.body).on('submit', '.azbn-api-formsave', {}, function(event){
 			event.preventDefault();
 			
