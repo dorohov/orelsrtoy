@@ -494,6 +494,11 @@
 		.calcLineHeight(24, 28, 320, 1680);
 		vertical-align: middle;
 		@media @media-screen-lg {margin-left: 35px;}
+		@media @media-size-lg {
+			font-size: @b-fs;
+			line-height: @b-lh - 2;
+			margin-left: 20px;
+		}
 		&,&[href^="tel:"],&[href^="tel:"]:hover,&[href^="tel:"]:focus, &:focus, &:hover{color: @navbar-color-link;}
 		span{font-weight: 700;}
 		//@media @media-device-lg{display: block;}
