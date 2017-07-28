@@ -139,13 +139,29 @@
 			
 			var form = $(this);
 			
-			form.find('input, select').on('change keyup blur', function(event){
+			form.find('input, select').on('keyup.azbn blur.azbn', function(event){
 				form.trigger('submit.azbn');
+				
 			});
 			
+			/*
 			form.find('select option').on('click', function(event){
-				$(this).closest('select').trigger('blur');
+				$(this).closest('select').val($(this).attr('value')).trigger('blur');
 			});
+			*/
+			
+			
+			form.find('select').on('change.azbn', function(){
+				
+				var sel = $(this);
+				var opt = sel.find('option:selected').eq(0);
+				
+				//console.log(opt.attr('value'));
+				sel.val(opt.attr('value'));
+				sel.trigger('blur.azbn');
+				alert(opt.attr('value'));
+			});
+			
 			
 			form.on('submit.azbn', function(event){
 				event.preventDefault();
