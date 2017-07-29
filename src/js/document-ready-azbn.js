@@ -138,36 +138,28 @@
 		$('.azbn__api__property-selection__form').each(function(index){
 			
 			var form = $(this);
+			var form_proxy = $('.azbn__api__property-selection__proxy');
 			
-			form.find('input, select').on('keyup.azbn blur.azbn', function(event){
-				form.trigger('submit.azbn');
+			form_proxy.on('azbn.copy', function(){
+				
+				form.find('input, select').each(function(index){
+					
+					var input = $(this);
+					var name = input.attr('name');
+					var _val = input.val();
+					
+					form_proxy.find('input[name="' + name + '"]').val(_val);
+					
+				})
 				
 			});
 			
-			/*
-			form.find('select option').on('click', function(event){
-				$(this).closest('select').val($(this).attr('value')).trigger('blur');
-			});
-			*/
-			
-			
-			form.find('select').on('change.azbn', function(){
-				
-				var sel = $(this);
-				var opt = sel.find('option:selected').eq(0);
-				
-				//console.log(opt.attr('value'));
-				sel.val(opt.attr('value'));
-				sel.trigger('blur.azbn');
-				//alert(opt.attr('value'));
-			});
-			
-			
-			form.on('submit.azbn', function(event){
+			form_proxy.on('submit.azbn', function(event){
 				event.preventDefault();
 				
-				var _form = form.clone(true);
+				var _form = form_proxy.clone(true);
 				
+				/*
 				var _input_method = $('<input/>', {
 					type : 'hidden',
 					name : 'method',
@@ -175,6 +167,7 @@
 				});
 				
 				_input_method.appendTo(_form);
+				*/
 				
 				var _form_s = _form.serialize();
 				
@@ -194,7 +187,7 @@
 							
 							(function(b_id, b){
 								
-								$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item[data-building-id="' + b_id + '"]').fadeIn('fast');
+								$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item[data-property-id="' + b_id + '"]').fadeIn('fast');
 								
 							})(i, data.response.buildings[i]);
 							
@@ -208,7 +201,45 @@
 					
 				})
 				
-			})
+			});
+			
+			form.find('input').on('change.azbn keyup.azbn blur.azbn', function(event){
+				
+				var input = $(this);
+				var name = input.attr('name');
+				var _val = input.val();
+				//console.log(_val);
+				
+				form_proxy.find('input[name="' + name + '"]').val(_val);
+				
+				form_proxy.trigger('submit.azbn');
+			});
+			
+			/*
+			form.find('select option').on('click', function(event){
+				$(this).closest('select').val($(this).attr('value')).trigger('blur');
+			});
+			*/
+			
+			
+			form.find('select').on('change.azbn blur.azbn', function(){
+				
+				var sel = $(this);
+				var name = sel.attr('name');
+				var opt = sel.find('option:selected').eq(0);
+				var _val = opt.attr('value');
+				//console.log(_val);
+				
+				form_proxy.find('input[name="' + name + '"]').val(_val);
+				
+				form_proxy.trigger('submit.azbn');
+				//console.log(opt.attr('value'));
+				//sel.val(opt.attr('value'));
+				//sel.trigger('blur.azbn');
+				//alert(opt.attr('value'));
+			});
+			
+			form_proxy.trigger('azbn.copy');
 			
 		});
 		
