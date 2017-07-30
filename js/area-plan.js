@@ -1,1 +1,1 @@
-!function(){$(document.body).on("click.azbn",".area-plan-item__object",{},function(a){a.preventDefault();var t=$(this),n=t.attr("data-link")||"",e=parseInt(t.attr("data-houses-id"))||0,o=$(".area-plan__block").attr("data-base-url")||"";""!=n?window.location.href=n:window.location.href=o+e}),$(".area-plan__block").trigger("azbn.area-plan__block.setStatus",[0,0])}();
+!function(){$(document.body).on("click.azbn",".area-plan-item__object",{},function(n){n.preventDefault();var t=$(this),a=t.attr("data-link")||"";window.location.href=a})}();

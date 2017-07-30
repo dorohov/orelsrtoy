@@ -294,6 +294,54 @@
 		})();
 		
 		
+		$('.azbn__apartment__section .azbn__apartment__popover').hide();
+		$('.azbn__apartment__section .azbn__apartment__link.is--free').on({
+			
+			/*
+			click : function(){
+				event.preventDefault();
+				alert(123);
+			},
+			*/
+			
+			mouseover : function(event){
+				event.preventDefault();
+				
+				var btn = $(this);
+				
+				var info = JSON.parse(btn.attr('data-popup-info'));
+				console.log(info);
+				var popover = btn.closest('.azbn__apartment__section').find('.azbn__apartment__popover');
+				
+				popover.find('.azbn__apartment__popover__title').html(info.title);
+				popover.find('.azbn__apartment__popover__img').html(info.img);
+				popover.find('.azbn__apartment__popover__area_total').html(info.area_total);
+				popover.find('.azbn__apartment__popover__price_value').html(info.price_value);
+				
+				popover
+					.css({
+						'left' : btn.position().left + btn.outerWidth(true) + 42 + 'px',
+						//'right' : 'inherit',//btn.position().left + btn.outerWidth(true) + 20 + popover.outerWidth(true) + 'px',
+						'top' : btn.parent().position().top + (btn.outerHeight(true) / 2) - (popover.outerHeight(true) / 2) + 'px',
+					})
+					.fadeIn('fast')
+				;
+				
+			},
+			
+			mouseout : function(event){
+				event.preventDefault();
+				
+				var btn = $(this);
+				
+				var popover = btn.closest('.azbn__apartment__section').find('.azbn__apartment__popover');
+				
+				popover.hide();
+				
+			},
+			
+		});
+		
 		
 		
 		
