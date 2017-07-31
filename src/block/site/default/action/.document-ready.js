@@ -3,9 +3,10 @@ $('.area-plan-item__hover').on('mouseover',  function(event){
 	event.preventDefault();		
 	
 	var block = $(this);
-	var uid = block.attr('data-popover-id') || 0;
+	var g = block.closest('.area-plan-item__group');
+	var uid = g.attr('data-popover-id') || 0;
 	
-	block.closest('.area-plan-item__group').addClass('is--hover');
+	g.addClass('is--hover');
 	
 	var _p_x = event.pageX,
 		_p_y = event.pageY
@@ -23,7 +24,7 @@ $('.area-plan-item__hover').on('mouseover',  function(event){
 		.fadeIn('fast')
 	;
 	
-	console.log(event.pageX);
+	//console.log(event.pageX);
 	
 });
 
@@ -31,10 +32,11 @@ $('.area-plan-item__hover').on('mouseout',  function(event){
 	event.preventDefault();
 	
 	var block = $(this);
-	var uid = block.attr('data-popover-id') || 0;
+	var g = block.closest('.area-plan-item__group');
+	var uid = g.attr('data-popover-id') || 0;
 	
 	$('.azbn__district-svg__popover[data-popover-id="' + uid + '"]').hide();
 	
-	$(this).closest('.area-plan-item__group').removeClass('is--hover');
+	g.removeClass('is--hover');
 	
 });
