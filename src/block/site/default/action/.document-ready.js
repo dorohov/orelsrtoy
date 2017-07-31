@@ -12,6 +12,8 @@ $('.area-plan-item__hover').on('mouseover',  function(event){
 		_p_y = event.pageY
 	;
 	
+	$('.azbn__district-svg__popover').hide();
+	
 	var popover = $('.azbn__district-svg__popover[data-popover-id="' + uid + '"]');
 	
 	var _parent_offset = popover.parent().offset();
