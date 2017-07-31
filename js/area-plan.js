@@ -1,1 +1,1 @@
-!function(){$(document.body).on("click.azbn",".area-plan-item__object",{},function(n){n.preventDefault();var t=$(this),a=t.attr("data-link")||"";window.location.href=a})}();
+!function(){$(document.body).on("click.azbn",".area-plan-item__object",{},function(t){t.preventDefault();var a=$(this),n=a.closest(".area-plan-item__group").attr("data-link")||"";window.location.href=n})}();

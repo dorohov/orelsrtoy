@@ -272,6 +272,10 @@
 		
 		
 		
+		
+		
+		$('.azbn__building-list__btn').empty().remove();
+		/*
 		$(document.body).on('click', '.azbn__building-list__btn', {}, function(event){
 			
 			var btn = $(this);
@@ -292,6 +296,16 @@
 			});
 			
 		})();
+		*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		$('.azbn__apartment__section .azbn__apartment__popover').hide();

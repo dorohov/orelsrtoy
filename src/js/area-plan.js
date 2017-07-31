@@ -6,7 +6,7 @@
 		event.preventDefault();
 		
 		var block = $(this);
-		var link = block.attr('data-link') || '';
+		var link = block.closest('.area-plan-item__group').attr('data-link') || '';
 		
 		window.location.href = link;
 		
