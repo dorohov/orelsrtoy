@@ -18,13 +18,29 @@ $('.area-plan-item__hover').on('mouseover',  function(event){
 	
 	var _parent_offset = popover.parent().offset();
 	
-	popover
-		.css({
-			top : _p_y - _parent_offset.top - (popover.outerHeight(true) / 2) + 'px',
-			left : _p_x - _parent_offset.left + (popover.outerWidth(true) / 2) + 'px',
-		})
-		.fadeIn('fast')
-	;
+	var __w_check = _p_x - _parent_offset.left + (popover.outerWidth(true) / 2) + popover.outerWidth(true);
+	
+	if(__w_check > popover.parent().width()) {
+		
+		popover
+			.css({
+				top : _p_y - _parent_offset.top + (48) + 'px',
+				left : _p_x - _parent_offset.left - (popover.outerWidth(true) / 2) + 'px',
+			})
+			.fadeIn('fast')
+		;
+		
+	} else {
+		
+		popover
+			.css({
+				top : _p_y - _parent_offset.top - (popover.outerHeight(true) / 2) + 'px',
+				left : _p_x - _parent_offset.left + (popover.outerWidth(true) / 2) + 'px',
+			})
+			.fadeIn('fast')
+		;
+		
+	}
 	
 	//console.log(event.pageX);
 	
