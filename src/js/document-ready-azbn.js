@@ -77,6 +77,16 @@
 									'transform' : 'translateY(-' + _pos + 'px)',
 								})
 							;
+						} else if(items_sm.index(btn) == (items_sm.length - 1)) {
+							
+							var __pos = _pos + _item_h - _move_me_p_h;
+							
+							move_me
+								.attr('data-translate-y', __pos)
+								.css({
+									'transform' : 'translateY(-' + __pos + 'px)',
+								})
+							;
 						}
 						
 					}
