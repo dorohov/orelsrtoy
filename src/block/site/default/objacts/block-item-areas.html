@@ -28,7 +28,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="{{objacts_prefix}}icon  is--areas">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="district" ]]</div>
+			<div class="{{objacts_prefix}}icon  is--areas">
+				<svg class="icon-svg icon-{{objacts_icon}}" role="img">
+					<use xlink:href="{{url-path-img}}/svg/sprite.svg#{{objacts_icon}}"></use>
+				</svg>
+			</div>
 		</div>
 	</a>
 </div> 

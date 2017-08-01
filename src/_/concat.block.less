@@ -784,8 +784,12 @@
 			padding-left: 20px;
 		}
 		@media @media-device {
-			html.safari &{width: ~"calc(100% - 11px)";}
+			//html.safari &{width: ~"calc(100% - 11px)";}
 			/*html.safari &{width: ~"calc(100% - 17px)";margin-left:auto;}*/
+		}		
+		html.safari &{
+			width: 100%;
+			//padding-left: 0;
 		}
 	}
 	&select-row{
@@ -813,7 +817,14 @@
 			width: ~"calc(100% + 20px)";
 		}
 		/*html.safari &{width: ~"calc(100% + 11px)";}*/
-		html.safari &{width: ~"calc(100% - 17px)";margin-left:auto;}
+		/*html.safari &{
+			width: ~"calc(100% - 17px)";
+			margin-left:auto;
+		}*/
+		html.safari &{
+			width: 100%;
+			padding-left: 0;
+		}
 	}
 	&select-label{
 		position: absolute;
@@ -834,6 +845,7 @@
 		&.is--border{
 			left: 20px;
 		}
+		html.safari &{display: none;}
 	}
 	&range-block{
 		padding: 0 20px;
@@ -1720,8 +1732,8 @@ textarea.form__control{height: 150px;}
 		position: absolute;
 		z-index: 2;
 		overflow: hidden;
-		top: 30px;
-		bottom: 75px;
+		top: 70px;
+		bottom: 70px;
 		left: 0;
 	}
 	&thumbnail-inner{
@@ -1731,6 +1743,7 @@ textarea.form__control{height: 150px;}
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
+		margin-top: 25px;
 		margin-bottom: 25px;
 		transition: @trs-site;
 		position: relative;
@@ -1772,30 +1785,24 @@ textarea.form__control{height: 150px;}
 		width: 36px;
 		height: 36px;
 		padding: 5px;
-		position: absolute;
-		bottom: 0;
-		@media @media-size-xs {bottom: -40px}
-		&.is--prev{
+		position: absolute;	
+		@media @media-size-xs {bottom: -40px}	
+		@media @media-notsmart {transform: rotate(90deg);}
+		@media @media-size-sm {left: 15px;}		
+		@media @media-screen {left: 3vw;}
+		&.is--prev{			
 			@media @media-size-xs {
 				left: 50%;
-				transform: translateX(-100%;);
+				transform: translateX(-100%);
 			}
-			@media @media-notsmart {display: none;}
+			@media @media-notsmart {top: 0;}
 		}
 		&.is--next{
 			@media @media-size-xs {
 				right: 50%;
-				transform: translateX(100%;);
+				transform: translateX(100%);
 			}
-			@media @media-notsmart {
-				transform: rotate(90deg);
-			}
-			@media @media-size-sm {
-				left: 15px;
-			}
-			@media @media-screen {
-				left: 3vw;
-			}
+			@media @media-notsmart {bottom: 0;}
 		}
 	}
 }
@@ -2063,6 +2070,7 @@ textarea.form__control{height: 150px;}
 		position: relative;
 		color: @white;
 		font-family: @b-ff-2;
+
 		&::after{
 			content: '';
 			position: absolute;
@@ -2076,17 +2084,30 @@ textarea.form__control{height: 150px;}
 	}
 	&container{
 		min-height: 0;
-		&::before{display: none;}
+		position: relative;
+		z-index: 2;
 		@media @media-device {
 			padding-top: 50px;
 			padding-bottom: 50px;
 		}
 		@media @media-screen {
-			padding-top: 7.8vw;
-			padding-bottom: 6vw;
+			padding-top: 4vw;
+			padding-bottom: 4vw;
+		}		
+		&::before{
+			@media @media-screen {
+				content: '';
+				top: 0vw;
+				height: 100%;
+				border-left: 1px dashed @white;
+				position: absolute;
+				display: block;
+				left: -8px;
+			}
+			@media @media-size-xxl {left: -45px;}
 		}
 	}
-	&heading{
+	/*&heading{
 		position: relative;
 		z-index: 2;
 		padding-left: 5vw;
@@ -2100,7 +2121,7 @@ textarea.form__control{height: 150px;}
 	&heading-big{		
 		.calcFontSize(46, 270, 320, 1680);
 		.calcLineHeight(46, 250, 320, 1680);
-	}
+	}*/
 }
 .mortgage-panel__{
 	&block{

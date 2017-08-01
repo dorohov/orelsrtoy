@@ -126,6 +126,7 @@
 			cursor: pointer;
 			color: @green;
 			transition: @trs-site;
+			.mortgage-header__owl &{color: @white!important;}
 			svg{
 				width: 12px;
 				height: 12px;
@@ -170,120 +171,16 @@
 /* No Js */
 .no-js .owl-carousel {display: block;}
 /*custom controls*/
-/*
-.owl-carousel{
-	.owl-dots{
-		display: flex;
-		justify-content: center;
-		position: absolute;
-		left: 0;
-		width: 100%;
-		bottom: 0;
-		.owl-dot{
-			border-radius: 50%;
-			border: 3px solid;
-			border-color: @blue-light;
-			width: 16px;
-			height: 16px;
-			margin: 0 8px;
-			transition: @transition-site;
-			&.active{
-				background-color: @blue-light; 
-			}
+.mortgage-header__owl{
+	.owl-stage-outer{
+		@media @media-screen {
+			padding-bottom: 25px;
 		}
 	}
-}
-._irb__owl{
 	.owl-nav{
-		div{
-			position: absolute;
-			//bottom: 5%; 
-			bottom: 1.7vw;   
-			transition: @transition-site;
-			width: 72px;
-			height: 12px;
-			//@media @media-size-sm-p{bottom: 6%;}
-			svg{
-				width: 100%;
-				height: 100%;
-				fill: #626262;
-				transition: @transition-site;
-			}			
-			&:hover{
-				svg{
-					fill: @pink;
-				}
-			}
-		}
-		.owl-prev{left: 21.2vw;}
-		.owl-next{right: 21.2vw;}
-		
-		.owl-prev{
-			left: 36%;
-			@media @media-size-xs-p{left: 10%;}
-			@media @media-size-xs-l{left: 25%;}
-			@media @media-size-sm-p{left: 33%;}
-			&:hover{
-				transform: translateX(-20px);				
-			}
-		}
+		.owl-prev,
 		.owl-next{
-			right: 36%;
-			@media @media-size-xs-p{right: 10%;}
-			@media @media-size-xs-l{right: 25%;}
-			@media @media-size-sm-p{right: 33%;}
-			&:hover{
-				transform: translateX(20px);				
-			}
+			color:  @white;
 		}
 	}
 }
-._iacb__owl{
-	.owl-nav{
-		div{
-			position: absolute;  
-			transition: @transition-site;
-			width: 30px;
-			height: 56px;
-			padding: 10px 0;
-			top: ~"calc(54% - 50px)";
-			transform: translateY(-50%);
-			z-index: 2;
-			@media @media-device{
-				background-color: @blue-light;
-			}
-			svg{
-				width: 100%;
-				height: 100%;
-				fill: @white;
-				transition: @transition-site;
-			}			
-			&:hover{
-				svg{
-					fill: @pink;
-				}
-			}
-		}
-		.owl-prev{
-			left: -35px;
-		}
-		.owl-next{
-			right: -35px;
-		}
-	}
-	.owl-dots{
-		bottom: 0;
-	}
-}
-._iab__owl-interior,
-._iab__owl-people{
-	.owl-dots{
-		bottom: 7px;
-		.owl-dot{
-			border-color: @white;
-			&.active{
-				background-color: @white; 
-			}
-		}
-	}
-}*/ 
