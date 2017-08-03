@@ -6,6 +6,7 @@ start .fecss document-ready
 $(function(){
 	var res = 'noname-browser';
 	var userAgent = navigator.userAgent.toLowerCase();
+	
 	if (userAgent.indexOf('msie') != -1) res = 'msie';
 	if (userAgent.indexOf('trident') != -1) res = 'msie';
 	if (userAgent.indexOf('konqueror') != -1) res = 'konqueror';
@@ -15,6 +16,8 @@ $(function(){
 	if (userAgent.indexOf('chromium') != -1) res = 'chromium';
 	if (userAgent.indexOf('opera') != -1) res = 'opera';
 	if (userAgent.indexOf('yabrowser') != -1) res = 'yabrowser';
+	
+	if (userAgent.indexOf('macintosh') != -1) res = res + ' macintosh ';
 	
 	$('html').eq(0).addClass(res);
 }); 
