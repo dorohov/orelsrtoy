@@ -2120,7 +2120,7 @@ textarea.form__control{height: 150px;}
 			@media @media-size-xxl {left: -45px;}
 		}
 	}
-	/*&heading{
+	&heading{
 		position: relative;
 		z-index: 2;
 		padding-left: 5vw;
@@ -2134,7 +2134,7 @@ textarea.form__control{height: 150px;}
 	&heading-big{		
 		.calcFontSize(46, 270, 320, 1680);
 		.calcLineHeight(46, 250, 320, 1680);
-	}*/
+	}
 }
 .mortgage-panel__{
 	&block{
@@ -2203,6 +2203,21 @@ textarea.form__control{height: 150px;}
 			@media @media-device {	.makeCols(12, 12);}
 			@media @media-size-md {	.makeCols(12, 12);}
 		}
+	}
+	&more-block{
+		@media @media-device {
+			margin-bottom: 40px;
+		}
+		@media @media-screen {
+			margin-bottom: 3vw;
+		}
+	}
+	&more-btn{
+		margin-bottom: 15px;
+	}
+	&more-collapse{
+		font-size: @b-fs - 4;
+		line-height: @b-lh - 4;
 	}
 }
 .mortgage-count__{
