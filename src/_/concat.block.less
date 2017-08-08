@@ -4308,7 +4308,7 @@ blockquote {
 			@media @media-size-xxl {left: -45px;}
 		}
 	}
-	&scroll{
+	/*&scroll{
 		display: none;
 		color: @white;
 		text-transform: lowercase;
@@ -4319,10 +4319,44 @@ blockquote {
 		@media @media-size-xxl {left: -60px}
 		span{
 			display: block;
-			transform: translate(-40%, 0%) rotate(-90deg);
+			//transform: translate(-40%, 0%) rotate(-90deg);
 			padding: 0 20px;
-			background-color: #1a294f;
+			//background-color: #1a294f;
 		}
+	}*/
+	&scrollto{
+		display: none;
+		text-transform: lowercase;
+		letter-spacing: 1.25px;
+		transform: translate(-50%, 0);
+		position: absolute;
+		@media @media-screen {
+			left: 50%; 
+			bottom: 2vw; 
+			display: block;
+		}
+	}
+	&scrollto-link{
+		display: flex;
+		align-items: center;
+		&, &:focus, &:hover{
+			color: @white;
+		}
+	}
+	&scrollto-inner{
+		padding: 0 2.5px;
+		&.is--icon{
+			width: 42px;
+			height: 42px;
+			animation: scroll 1.5s infinite ease-in-out;
+			._iph__scrollto-link:hover &{animation-play-state: paused;}
+		}
+
+	}
+	@keyframes scroll {
+		0%   {transform: translateY(0);}
+		50%   {transform: translateY(5px);}
+		100% {transform: translateY(0);}
 	}
 	&heading-block{
 		@media @media-notsmart {
