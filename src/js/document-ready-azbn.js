@@ -341,7 +341,7 @@
 					var popover = btn.closest('.azbn__apartment__section').find('.azbn__apartment__popover');
 					
 					popover.find('.azbn__apartment__popover__title').html(info.title);
-					popover.find('.azbn__apartment__popover__img').html(info.img);
+					popover.find('.azbn__apartment__popover__img').attr('src', info.img);
 					popover.find('.azbn__apartment__popover__area_total').html(info.area_total);
 					popover.find('.azbn__apartment__popover__price_value').html(info.price_value);
 					
