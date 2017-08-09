@@ -150,6 +150,8 @@
 			var form = $(this);
 			var form_proxy = $('.azbn__api__property-selection__proxy');
 			
+			form.data('in-request', 0);
+			
 			form_proxy.on('azbn.copy', function(){
 				
 				form.find('input, select').each(function(index){
@@ -169,55 +171,55 @@
 				
 				var _form = form_proxy.clone(true);
 				
-				/*
-				var _input_method = $('<input/>', {
-					type : 'hidden',
-					name : 'method',
-					value : 'iblocks/property/selection',
-				});
+				var in_request = parseInt(form.data('in-request'));
 				
-				_input_method.appendTo(_form);
-				*/
-				
-				var _form_s = _form.serialize();
-				
-				$.post('/api/', _form_s, function(data){
+				if(!in_request) {
 					
-					_form.empty().remove();
+					var _form_s = _form.serialize();
 					
-					data = JSON.parse(data);
+					form.data('in-request', 1);
 					
-					//console.log(data);
-					
-					if(data.response && data.response.buildings) {
+					$.post('/api/', _form_s, function(data){
 						
-						$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item').hide();
+						form.data('in-request', 0);
 						
-						if(Object.keys(data.response.buildings).length > 0) {
+						_form.empty().remove();
+						
+						data = JSON.parse(data);
+						
+						//console.log(data);
+						
+						if(data.response && data.response.buildings) {
 							
-							for(var i in data.response.buildings) {
+							$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item').hide();
+							
+							if(Object.keys(data.response.buildings).length > 0) {
 								
-								(function(b_id, b){
+								for(var i in data.response.buildings) {
 									
-									$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item[data-property-id="' + b_id + '"]').fadeIn('fast');
+									(function(b_id, b){
+										
+										$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item[data-property-id="' + b_id + '"]').fadeIn('fast');
+										
+									})(i, data.response.buildings[i]);
 									
-								})(i, data.response.buildings[i]);
+								}
+								
+							} else {
+								
+								$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item').hide();
 								
 							}
 							
 						} else {
 							
-							$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item').hide();
+							$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item').fadeIn('fast');
 							
 						}
 						
-					} else {
-						
-						$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item').fadeIn('fast');
-						
-					}
+					});
 					
-				})
+				}
 				
 			});
 			
