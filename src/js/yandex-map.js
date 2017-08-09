@@ -35,7 +35,8 @@ $(function() {
 					var map_placemark = new ymaps.Placemark(block_data.coords, {
 						hintContent: ''
 					}, {
-						iconLayout: polygonLayout
+						iconLayout: polygonLayout,
+						iconImageOffset: [-41, -16]
 					});
 					
 					map_area_block

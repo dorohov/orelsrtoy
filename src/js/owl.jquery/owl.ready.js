@@ -81,7 +81,7 @@ $(function() {
 		smartSpeed: 500,
 		margin: 30,
 		items:3,
-		loop: true,
+		loop: false,
 		mouseDrag: false, 
 		responsive : {
 			0 : {

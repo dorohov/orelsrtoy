@@ -561,7 +561,11 @@
 		position: relative;
 		background-color: fadeout(@white, 50%);
 		width: 210px;
-		padding: 10px 0px;	
+		padding: 10px 0px;
+		
+		transform-origin: left top;
+		transform: translateY(-82px);
+		
 		&.is--small{
 			padding: 5px 0;
 			width: 150px;
@@ -3813,6 +3817,22 @@ blockquote {
 		}
 	}
 }
+.docs-page{}
+._dcp__{
+	&cols{
+		&.is--cols-4{
+			@media @media-size-xs-l {
+				.makeCols(6, 12);
+			} 
+			@media @media-size-sm {
+				.makeCols(6, 12);
+			} 
+			@media @media-size-md {
+				.makeCols(6, 12);
+			} 
+		}
+	}
+}
 .index-page{}
 ._ip__{
 	&container{
@@ -3835,22 +3855,6 @@ blockquote {
 			min-height: 0;
 			padding-top: 0; 
 			padding-bottom: 0;
-		}
-	}
-}
-.docs-page{}
-._dcp__{
-	&cols{
-		&.is--cols-4{
-			@media @media-size-xs-l {
-				.makeCols(6, 12);
-			} 
-			@media @media-size-sm {
-				.makeCols(6, 12);
-			} 
-			@media @media-size-md {
-				.makeCols(6, 12);
-			} 
 		}
 	}
 }
