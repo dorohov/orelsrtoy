@@ -166,6 +166,9 @@
 				
 			});
 			
+			$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item._in-process').hide();
+			$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item._no-results').hide();
+			
 			form_proxy.on('submit.azbn', function(event){
 				event.preventDefault();
 				
@@ -174,6 +177,10 @@
 				var in_request = parseInt(form.data('in-request'));
 				
 				if(!in_request) {
+					
+					$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item').hide();
+					
+					$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item._in-process').fadeIn('fast');
 					
 					var _form_s = _form.serialize();
 					
@@ -209,11 +216,13 @@
 								
 								$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item').hide();
 								
+								$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item._no-results').fadeIn('fast');
+								
 							}
 							
 						} else {
 							
-							$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item').fadeIn('fast');
+							$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item:not(._in-process):not(._no-results)').fadeIn('fast');
 							
 						}
 						
