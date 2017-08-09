@@ -193,13 +193,21 @@
 						
 						$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item').hide();
 						
-						for(var i in data.response.buildings) {
+						if(data.response.buildings.length > 0) {
 							
-							(function(b_id, b){
+							for(var i in data.response.buildings) {
 								
-								$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item[data-property-id="' + b_id + '"]').fadeIn('fast');
+								(function(b_id, b){
+									
+									$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item[data-property-id="' + b_id + '"]').fadeIn('fast');
+									
+								})(i, data.response.buildings[i]);
 								
-							})(i, data.response.buildings[i]);
+							}
+							
+						} else {
+							
+							$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item').hide();
 							
 						}
 						

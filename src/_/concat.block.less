@@ -128,6 +128,158 @@
 		color: @bread-color;
 	}
 }
+.commercial-panel__{
+	&block{}
+	&table-responsive{
+		@media @media-size-xs {
+			padding-top: 30px;
+			position: relative;
+			&::before{
+				content: "Листайте вправо \27A4";
+				position: absolute;
+				top: 0px;
+				left: 0;
+				font-family: @b-ff-2;
+				color: @green;
+				letter-spacing: 0.8px;
+			}
+		}
+		@media @media-device {
+			margin-bottom: 30px;			
+			overflow-y: hidden;
+		    overflow-x: auto;
+		    width: 100%;
+		    border-color: @green;
+		    border:0;
+		}
+		@media @media-screen {
+			margin-bottom: 2vw;
+
+			html.msie &{overflow: visible;}
+		}		
+	}
+	&table{
+		@media @media-device {
+			width: 2000px;
+			border: 2px solid @green;
+		}
+		thead{
+			td, th{
+				color: @blue;
+				text-align: center;
+				font-size: @b-fs + 6px;
+				line-height: @b-lh + 0px;
+				border-bottom: 2px solid @green;
+				padding: 25px 15px;
+				vertical-align: middle;
+				@media @media-device {
+				    white-space: nowrap;
+				}
+				@media @media-size-md {
+				    font-size: @b-fs;
+				}
+				@media @media-size-xxl {
+					font-size: @b-fs + 12px;
+					line-height: @b-lh + 6px;
+				}
+				&:first-child{
+					text-align: left;
+					@media @media-screen {padding-left: 0;}						
+				}
+			}
+		}
+		tbody{
+			td, th{
+				@media @media-device {
+				    white-space: nowrap;		
+				}
+				color: @blue-dark;
+				text-align: center;
+				vertical-align: middle;
+				padding: 15px;
+				border-bottom: 1px dashed @green;
+				&.is--noborder{
+					border-bottom: 0;
+					padding-bottom: 0;
+					padding-top: 30px;
+				}
+				&.is--btn{
+					padding-top: 0px;
+				}
+				&.is--left{
+					text-align: left;
+					img{margin: 0}
+					@media @media-screen {padding-left: 0;}
+				}
+				&.is--right{text-align: right}
+				&[rowspan="2"]{
+					padding: 45px 15px;
+				}			
+			}
+		}
+		img{
+			margin: 0 auto;
+			@media @media-size-sm {min-width: 200px;}
+			@media @media-size-md {width: 100px;}
+			@media @media-size-lg {width: 140px;}
+		}
+	}
+	&heading{
+		font-size: @b-fs + 2px;	
+		font-weight: 700;
+		@media @media-size-xxl {font-size: @b-fs + 6px;}		
+	}	
+	&area{
+		font-size: @b-fs - 2px;	
+		@media @media-size-xxl {font-size: @b-fs;}		
+	}		
+	&area-val{		
+		font-size: @b-fs + 2px;
+		line-height: @b-lh;		
+		font-weight: 700;
+		sup{font-weight: 400}
+		@media @media-size-xxl {font-size: @b-fs + 6px;}
+	}
+	&area-note{	
+		font-weight: 400;
+		font-size: @b-fs;
+
+	}
+	&cost{
+		font-size: @b-fs + 6px;
+		line-height: @b-lh;
+		font-weight: 700;
+		padding-right: 30px;
+		position: relative;
+		display: inline-block;
+		span{
+			width: 18px;
+			height: 18px;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			svg{display: block;}
+		}
+	}
+	&cost-val{
+		font-size: @b-fs;
+		line-height: @b-lh - 11px;
+		padding-right: 45px;
+		position: relative;
+		display: inline-block;
+		span{
+			width: 45px;
+			height: 13px;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			svg{display: inline-block; width: 13px;}
+		}
+	}
+	&btn{text-align: center;}
+} 
 .btn__{
 	&block{
 		text-align: center;
@@ -377,158 +529,6 @@
 		}
 	}
 }
-.commercial-panel__{
-	&block{}
-	&table-responsive{
-		@media @media-size-xs {
-			padding-top: 30px;
-			position: relative;
-			&::before{
-				content: "Листайте вправо \27A4";
-				position: absolute;
-				top: 0px;
-				left: 0;
-				font-family: @b-ff-2;
-				color: @green;
-				letter-spacing: 0.8px;
-			}
-		}
-		@media @media-device {
-			margin-bottom: 30px;			
-			overflow-y: hidden;
-		    overflow-x: auto;
-		    width: 100%;
-		    border-color: @green;
-		    border:0;
-		}
-		@media @media-screen {
-			margin-bottom: 2vw;
-
-			html.msie &{overflow: visible;}
-		}		
-	}
-	&table{
-		@media @media-device {
-			width: 2000px;
-			border: 2px solid @green;
-		}
-		thead{
-			td, th{
-				color: @blue;
-				text-align: center;
-				font-size: @b-fs + 6px;
-				line-height: @b-lh + 0px;
-				border-bottom: 2px solid @green;
-				padding: 25px 15px;
-				vertical-align: middle;
-				@media @media-device {
-				    white-space: nowrap;
-				}
-				@media @media-size-md {
-				    font-size: @b-fs;
-				}
-				@media @media-size-xxl {
-					font-size: @b-fs + 12px;
-					line-height: @b-lh + 6px;
-				}
-				&:first-child{
-					text-align: left;
-					@media @media-screen {padding-left: 0;}						
-				}
-			}
-		}
-		tbody{
-			td, th{
-				@media @media-device {
-				    white-space: nowrap;		
-				}
-				color: @blue-dark;
-				text-align: center;
-				vertical-align: middle;
-				padding: 15px;
-				border-bottom: 1px dashed @green;
-				&.is--noborder{
-					border-bottom: 0;
-					padding-bottom: 0;
-					padding-top: 30px;
-				}
-				&.is--btn{
-					padding-top: 0px;
-				}
-				&.is--left{
-					text-align: left;
-					img{margin: 0}
-					@media @media-screen {padding-left: 0;}
-				}
-				&.is--right{text-align: right}
-				&[rowspan="2"]{
-					padding: 45px 15px;
-				}			
-			}
-		}
-		img{
-			margin: 0 auto;
-			@media @media-size-sm {min-width: 200px;}
-			@media @media-size-md {width: 100px;}
-			@media @media-size-lg {width: 140px;}
-		}
-	}
-	&heading{
-		font-size: @b-fs + 2px;	
-		font-weight: 700;
-		@media @media-size-xxl {font-size: @b-fs + 6px;}		
-	}	
-	&area{
-		font-size: @b-fs - 2px;	
-		@media @media-size-xxl {font-size: @b-fs;}		
-	}		
-	&area-val{		
-		font-size: @b-fs + 2px;
-		line-height: @b-lh;		
-		font-weight: 700;
-		sup{font-weight: 400}
-		@media @media-size-xxl {font-size: @b-fs + 6px;}
-	}
-	&area-note{	
-		font-weight: 400;
-		font-size: @b-fs;
-
-	}
-	&cost{
-		font-size: @b-fs + 6px;
-		line-height: @b-lh;
-		font-weight: 700;
-		padding-right: 30px;
-		position: relative;
-		display: inline-block;
-		span{
-			width: 18px;
-			height: 18px;
-			position: absolute;
-			top: 50%;
-			right: 0;
-			transform: translateY(-50%);
-			svg{display: block;}
-		}
-	}
-	&cost-val{
-		font-size: @b-fs;
-		line-height: @b-lh - 11px;
-		padding-right: 45px;
-		position: relative;
-		display: inline-block;
-		span{
-			width: 45px;
-			height: 13px;
-			position: absolute;
-			top: 50%;
-			right: 0;
-			transform: translateY(-50%);
-			svg{display: inline-block; width: 13px;}
-		}
-	}
-	&btn{text-align: center;}
-} 
 .contacts-panel__{
 	&block{}
 	&row{}
@@ -652,6 +652,18 @@
 		color: @blue;
 	}
 }
+.fancybox-preview{	
+	&.img{}
+	&.backgound{
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
 .docs-block{	
 	@media @media-device {margin-bottom: 35px;}
 	@media @media-screen {margin-bottom: 4vw;}
@@ -720,18 +732,6 @@
 				margin-bottom: 5px;
 			}
 		}
-	}
-}
-.fancybox-preview{	
-	&.img{}
-	&.backgound{
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 100%;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
 	}
 }
 .filter-panel__{
@@ -882,124 +882,6 @@
 			content: "до";
 			right: 0;
 		}
-	}
-}
-.footer__{
-	&block{
-		position: relative;
-		z-index: 4;
-		font-family: @footer-ff;
-		font-size: @footer-fs - 4px; //14
-		line-height: @footer-lh - 6px; //22 
-		font-weight: 300;
-		color: @footer-color;	
-		background-color: @footer-bg;
-		padding: 20px 0;
-		@media print{display: none;} 
-		@media @media-size-xs-p{text-align: center;}
-	}
-	&container{}
-	&row{
-		justify-content: space-between;
-		align-items: center;
-		margin-top: -15px;
-		@media @media-device{flex-wrap: wrap;}
-	}
-	&cols{
-		padding-top: 15px;
-		@media @media-size-xs-p {.makeCols(6, 12);}
-		&.is--copyright{
-			@media @media-size-sm {.makeCols(2, 12);}
-			@media @media-screen {
-				.makeCols(2, 12);
-				.calcFontSize(15, 17, 1025, 1680);
-				.calcLineHeight(22, 24, 1025, 1680);
-			}
-			@media @media-size-mdl {.makeCols(1.2, 12);}
-		}
-		&.is--contacts{
-			text-align: center;			
-			a{
-				&, &:hover, &:focus{color: @footer-color;}
-			}
-			@media @media-size-xs {text-align: right;}
-			@media @media-size-sm {.makeCols(3, 12);}
-			@media @media-screen {
-				.makeCols(2, 12);
-				.calcFontSize(15, 17, 1025, 1680);
-				.calcLineHeight(22, 24, 1025, 1680);
-			}
-		}
-		&.is--text{
-			text-align: center;
-			@media @media-device {.makeCols(12, 12); order: 1}
-			@media @media-screen {.makeCols(4, 12);}
-			@media @media-size-mdl {.makeCols(5.3, 12);}
-		}
-		&.is--soc{
-			@media @media-size-xs-l {.makeCols(4, 12);}
-			@media @media-size-sm {.makeCols(3, 12);}
-			@media @media-screen {.makeCols(2, 12);}
-			.social__row{
-				justify-content: center;
-				@media @media-size-xs-p {justify-content: flex-start;}
-			}
-		}
-		&.is--dorohovdesign{
-			@media @media-size-xs-l {.makeCols(2.7, 12);}
-			@media @media-size-sm {.makeCols(2, 12);}
-			@media @media-screen {.makeCols(2, 12);}
-			@media @media-size-mdl{.makeCols(1.5, 12);}
-
-		}
-	}
-	&copyright-row{
-		align-items: center;
-		margin-left: -10px;
-		margin-right: -10px;
-		@media @media-size-sml {flex-wrap: wrap;}		
-	}
-	&copyright-cols{
-		padding-left: 10px;
-		padding-right: 10px;
-		@media @media-size-sml {.makeCols(12, 12);}
-		&.is--logotip{}
-		&.is--copyright{@media @media-device-xl {display: none}}
-	}
-	&logotip{
-		width: 100%;
-		max-width: 75px;
-		height: 75px;
-		display: block;
-	}
-	&dorohovdesign-row{
-		align-items: center;
-		margin-left: -10px;
-		margin-right: -10px;
-		@media @media-device-xl {flex-wrap: wrap; text-align: center;}
-		@media @media-size-xs {text-align: right;}
-		@media @media-screen-lg {justify-content: flex-end;}
-	}
-	&dorohovdesign-cols{
-		padding-left: 10px;
-		padding-right: 10px;
-		@media @media-device-xl{.makeCols(12, 12);}
-	}
-	&dorohovdesign-logotip{		
-		border: none;
-		display: block;
-		width: 75px;
-		height: 25px;
-		margin:0 auto;
-		color: @footer-color;
-		@media @media-size-xs {margin: 0 0 0 auto}
-		@media @media-device-xl {
-			width: 90px;
-			height: 30px;
-		}
-		&:hover{
-			color: @b-color-a;
-		}	
 	}
 }
 .form-panel__{
@@ -1306,6 +1188,124 @@ textarea.form__control{height: 150px;}
 		}
 	}
 }*/
+.footer__{
+	&block{
+		position: relative;
+		z-index: 4;
+		font-family: @footer-ff;
+		font-size: @footer-fs - 4px; //14
+		line-height: @footer-lh - 6px; //22 
+		font-weight: 300;
+		color: @footer-color;	
+		background-color: @footer-bg;
+		padding: 20px 0;
+		@media print{display: none;} 
+		@media @media-size-xs-p{text-align: center;}
+	}
+	&container{}
+	&row{
+		justify-content: space-between;
+		align-items: center;
+		margin-top: -15px;
+		@media @media-device{flex-wrap: wrap;}
+	}
+	&cols{
+		padding-top: 15px;
+		@media @media-size-xs-p {.makeCols(6, 12);}
+		&.is--copyright{
+			@media @media-size-sm {.makeCols(2, 12);}
+			@media @media-screen {
+				.makeCols(2, 12);
+				.calcFontSize(15, 17, 1025, 1680);
+				.calcLineHeight(22, 24, 1025, 1680);
+			}
+			@media @media-size-mdl {.makeCols(1.2, 12);}
+		}
+		&.is--contacts{
+			text-align: center;			
+			a{
+				&, &:hover, &:focus{color: @footer-color;}
+			}
+			@media @media-size-xs {text-align: right;}
+			@media @media-size-sm {.makeCols(3, 12);}
+			@media @media-screen {
+				.makeCols(2, 12);
+				.calcFontSize(15, 17, 1025, 1680);
+				.calcLineHeight(22, 24, 1025, 1680);
+			}
+		}
+		&.is--text{
+			text-align: center;
+			@media @media-device {.makeCols(12, 12); order: 1}
+			@media @media-screen {.makeCols(4, 12);}
+			@media @media-size-mdl {.makeCols(5.3, 12);}
+		}
+		&.is--soc{
+			@media @media-size-xs-l {.makeCols(4, 12);}
+			@media @media-size-sm {.makeCols(3, 12);}
+			@media @media-screen {.makeCols(2, 12);}
+			.social__row{
+				justify-content: center;
+				@media @media-size-xs-p {justify-content: flex-start;}
+			}
+		}
+		&.is--dorohovdesign{
+			@media @media-size-xs-l {.makeCols(2.7, 12);}
+			@media @media-size-sm {.makeCols(2, 12);}
+			@media @media-screen {.makeCols(2, 12);}
+			@media @media-size-mdl{.makeCols(1.5, 12);}
+
+		}
+	}
+	&copyright-row{
+		align-items: center;
+		margin-left: -10px;
+		margin-right: -10px;
+		@media @media-size-sml {flex-wrap: wrap;}		
+	}
+	&copyright-cols{
+		padding-left: 10px;
+		padding-right: 10px;
+		@media @media-size-sml {.makeCols(12, 12);}
+		&.is--logotip{}
+		&.is--copyright{@media @media-device-xl {display: none}}
+	}
+	&logotip{
+		width: 100%;
+		max-width: 75px;
+		height: 75px;
+		display: block;
+	}
+	&dorohovdesign-row{
+		align-items: center;
+		margin-left: -10px;
+		margin-right: -10px;
+		@media @media-device-xl {flex-wrap: wrap; text-align: center;}
+		@media @media-size-xs {text-align: right;}
+		@media @media-screen-lg {justify-content: flex-end;}
+	}
+	&dorohovdesign-cols{
+		padding-left: 10px;
+		padding-right: 10px;
+		@media @media-device-xl{.makeCols(12, 12);}
+	}
+	&dorohovdesign-logotip{		
+		border: none;
+		display: block;
+		width: 75px;
+		height: 25px;
+		margin:0 auto;
+		color: @footer-color;
+		@media @media-size-xs {margin: 0 0 0 auto}
+		@media @media-device-xl {
+			width: 90px;
+			height: 30px;
+		}
+		&:hover{
+			color: @b-color-a;
+		}	
+	}
+}
 .gallery-panel__{
 	&block{		
 		@media @media-device {
@@ -1960,132 +1960,6 @@ textarea.form__control{height: 150px;}
 		}
 	}
 }
- //
-// Modals
-// --------------------------------------------------
-
-// .modal-open      - body class for killing the scroll
-// .modal           - container to scroll within
-// .modal-dialog    - positioning shell for the actual modal
-// .modal-content   - actual modal w/ bg and corners and shit
-
-// Kill the scroll on the body
-.modal-open {
-	//overflow: hidden; 
-}
-.modal {
-	display: none;
-	overflow: hidden;
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: @zindex-modal;
-	-webkit-overflow-scrolling: touch;
-	outline: 0;
-	@media @media-size-xs{
-		&.fade .modal-dialog {left: -100%;}
-		&.in .modal-dialog {left: 0;}
-	}
-	@media @media-notsmart{
-		&.fade .modal-dialog {top: 0;}
-		&.in .modal-dialog {top: 5%;}
-	}
-	@media @media-size-mdl{
-		&.fade .modal-dialog {top: 0;}
-		&.in .modal-dialog {top: 0%;}
-	}
-}
-.modal-open .modal {
-	overflow-x: hidden;
-	overflow-y: auto;
-	@media @media-notsmart{overflow-y: hidden;}
-	
-}
-.modal-backdrop {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: @zindex-modal-background;
-	background-color: @modal-backdrop-bg;
-	// Fade for backdrop
-	&.fade { .opacity(0); }
-	&.in { .opacity(0.90); }
-
-}
-.modal-dialog {
-	transition: all 0.5s;
-	position: relative;
-	@media @media-size-xs 	{width: auto;	margin: 0px;}  
-	@media @media-size-sm 	{width: 620px;	margin: 10px auto;}  
-	@media @media-screen 	{width: 750px;	margin: 0px auto;} 
-	 
-}
-.modal-body {
-	position: relative;
-	background: @white;
-	//color: @black;	
-	@media @media-size-xs{padding: 25px 40px 15px;}	
-	@media @media-size-sm{padding: 70px 60px 40px;}
-	@media @media-screen{padding: 5vw 6vw 3vw;}
-}
-.modal-content{}
-// Title text within header
-.modal-title {}
-.modal-close{
-    position: absolute;
-    z-index: 5;    
-	width: 42px;
-	height: 42px;
-	padding: 10px;
-	background: none;
-	border:none;
-	transition: @trs-site;
-	@media @media-device{
-		top: 20px;
-		right: 20px;
-	}
-	@media @media-size-xs{
-		top: 0px;
-		right: 0px;
-	}
-	@media @media-screen{
-		top: 1.2vw;
-    	right: 1.2vw;
-	}	
-	&:hover{
-		color: @green;
-	}
-}
-.modal-note{
-	margin-bottom: 20px;
-}
-// Measure scrollbar width for padding body during modal show/hide
-.modal-scrollbar-measure {
-  position: absolute;
-  top: -9999px;
-  width: 50px;
-  height: 50px;
-  overflow: scroll;
-}
-
-//custom styles
-.modal-base{
-	/*display: block;
-	opacity: 1;
-	background: @black*/
-}
-.modal-base__{
-	&dialog {
-		//@media @media-device {
-		height: 100%;
-		overflow: auto;
-		//}	
-	}
-}
 .mortgage-header__{
 	&block{
 		background-size: cover;
@@ -2293,6 +2167,132 @@ textarea.form__control{height: 150px;}
 	&note{
 		.calcFontSize(18, 36, 320, 1680);
 		.calcLineHeight(20, 38, 320, 1680);
+	}
+}
+ //
+// Modals
+// --------------------------------------------------
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+
+// Kill the scroll on the body
+.modal-open {
+	//overflow: hidden; 
+}
+.modal {
+	display: none;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: @zindex-modal;
+	-webkit-overflow-scrolling: touch;
+	outline: 0;
+	@media @media-size-xs{
+		&.fade .modal-dialog {left: -100%;}
+		&.in .modal-dialog {left: 0;}
+	}
+	@media @media-notsmart{
+		&.fade .modal-dialog {top: 0;}
+		&.in .modal-dialog {top: 5%;}
+	}
+	@media @media-size-mdl{
+		&.fade .modal-dialog {top: 0;}
+		&.in .modal-dialog {top: 0%;}
+	}
+}
+.modal-open .modal {
+	overflow-x: hidden;
+	overflow-y: auto;
+	@media @media-notsmart{overflow-y: hidden;}
+	
+}
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: @zindex-modal-background;
+	background-color: @modal-backdrop-bg;
+	// Fade for backdrop
+	&.fade { .opacity(0); }
+	&.in { .opacity(0.90); }
+
+}
+.modal-dialog {
+	transition: all 0.5s;
+	position: relative;
+	@media @media-size-xs 	{width: auto;	margin: 0px;}  
+	@media @media-size-sm 	{width: 620px;	margin: 10px auto;}  
+	@media @media-screen 	{width: 750px;	margin: 0px auto;} 
+	 
+}
+.modal-body {
+	position: relative;
+	background: @white;
+	//color: @black;	
+	@media @media-size-xs{padding: 25px 40px 15px;}	
+	@media @media-size-sm{padding: 70px 60px 40px;}
+	@media @media-screen{padding: 5vw 6vw 3vw;}
+}
+.modal-content{}
+// Title text within header
+.modal-title {}
+.modal-close{
+    position: absolute;
+    z-index: 5;    
+	width: 42px;
+	height: 42px;
+	padding: 10px;
+	background: none;
+	border:none;
+	transition: @trs-site;
+	@media @media-device{
+		top: 20px;
+		right: 20px;
+	}
+	@media @media-size-xs{
+		top: 0px;
+		right: 0px;
+	}
+	@media @media-screen{
+		top: 1.2vw;
+    	right: 1.2vw;
+	}	
+	&:hover{
+		color: @green;
+	}
+}
+.modal-note{
+	margin-bottom: 20px;
+}
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+//custom styles
+.modal-base{
+	/*display: block;
+	opacity: 1;
+	background: @black*/
+}
+.modal-base__{
+	&dialog {
+		//@media @media-device {
+		height: 100%;
+		overflow: auto;
+		//}	
 	}
 }
 .navbar-site{
@@ -3615,52 +3615,6 @@ textarea.form__control{height: 150px;}
 		font-style: italic;
 	}
 }
-.social__{
-	&block{}
-	&row{
-		//@media @media-size-xs {
-			margin-left: -(@soc-gutter);
-			margin-right: -(@soc-gutter);
-		//}
-	}
-	&cols{
-		//@media @media-size-xs {
-			padding-left: @soc-gutter;
-			padding-right: @soc-gutter;
-		//}
-	}
-	&item{
-		display: block;
-		border-radius: 50%;
-		width: @soc-size; 
-		height: @soc-size;
-		transition: @trs-site;
-		border-radius: @soc-border-radius;
-		background-color: @soc-bg;
-		padding: 7px;		
-		&, &:hover, &:focus{color: @soc-color;}
-		&:hover{
-			&.is--vk{
-				background-color: @color-vk;				
-			}
-			&.is--fb{
-				background-color: @color-fb;				
-			}
-			&.is--inst{
-				background-color: @color-inst;				
-			}
-			&.is--ok{
-				background-color: @color-ok;				
-			}
-			&.is--tw{
-				background-color: @color-tw;				
-			}
-			&.is--skype{
-				background-color: @color-skype;				
-			}
-		}
-	}
-}
 .text-container__{
 	&block{}
 	&row{		
@@ -3789,6 +3743,52 @@ blockquote {
 		}
 	}*/
 }
+.social__{
+	&block{}
+	&row{
+		//@media @media-size-xs {
+			margin-left: -(@soc-gutter);
+			margin-right: -(@soc-gutter);
+		//}
+	}
+	&cols{
+		//@media @media-size-xs {
+			padding-left: @soc-gutter;
+			padding-right: @soc-gutter;
+		//}
+	}
+	&item{
+		display: block;
+		border-radius: 50%;
+		width: @soc-size; 
+		height: @soc-size;
+		transition: @trs-site;
+		border-radius: @soc-border-radius;
+		background-color: @soc-bg;
+		padding: 7px;		
+		&, &:hover, &:focus{color: @soc-color;}
+		&:hover{
+			&.is--vk{
+				background-color: @color-vk;				
+			}
+			&.is--fb{
+				background-color: @color-fb;				
+			}
+			&.is--inst{
+				background-color: @color-inst;				
+			}
+			&.is--ok{
+				background-color: @color-ok;				
+			}
+			&.is--tw{
+				background-color: @color-tw;				
+			}
+			&.is--skype{
+				background-color: @color-skype;				
+			}
+		}
+	}
+}
 .error-page{
 }
 ._ep__{
@@ -3841,8 +3841,6 @@ blockquote {
 		}
 	}
 }
-.index-page{}
-._ip__{}
 .mortgage-page{}
 ._mgp__{
 	&container{
@@ -3858,6 +3856,8 @@ blockquote {
 		}
 	}
 }
+.index-page{}
+._ip__{}
 .area-adv__{
 	&block{
 		@media @media-device {
