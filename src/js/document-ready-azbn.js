@@ -193,7 +193,7 @@
 						
 						$('.azbn__api__property-selection__result .azbn__api__property-selection__result__item').hide();
 						
-						if(data.response.buildings.length > 0) {
+						if(Object.keys(data.response.buildings).length > 0) {
 							
 							for(var i in data.response.buildings) {
 								
