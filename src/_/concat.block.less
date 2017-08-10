@@ -2932,6 +2932,10 @@ textarea.form__control{height: 150px;}
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
+		@media @media-device {
+			background-size: contain;
+    		background-position: left center;
+		}	
 		&.is--full{
 			@media @media-size-xs {
 				height: 200px;
