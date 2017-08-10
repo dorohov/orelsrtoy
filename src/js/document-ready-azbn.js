@@ -348,32 +348,51 @@
 			
 			$('.azbn__apartment__section .azbn__apartment__link.is--free').on({
 				
-				/*
-				click : function(){
-					event.preventDefault();
-					alert(123);
-				},
-				*/
-				
 				mouseover : function(event){
 					event.preventDefault();
 					
 					var btn = $(this);
 					
+					$('.azbn__apartment__section .azbn__apartment__popover').hide();
+					
 					var info = JSON.parse(btn.attr('data-popup-info'));
 					console.log(info);
 					var popover = btn.closest('.azbn__apartment__section').find('.azbn__apartment__popover');
-					
+					/*
+					if(info.img != '') {
+						
+						var _img = new Image();
+						_img.src = info.img;
+						img.onload = function() {
+							
+							
+							
+						}
+						
+					}
+					*/
 					popover.find('.azbn__apartment__popover__title').html(info.title);
 					popover.find('.azbn__apartment__popover__img').attr('src', info.img);
 					popover.find('.azbn__apartment__popover__area_total').html(info.area_total);
 					popover.find('.azbn__apartment__popover__price_value').html(info.price_value);
 					
+					var btn_pos = btn.position();
+					
+					var _h = btn.parent().position().top + (btn.outerHeight(true) / 2) - (popover.outerHeight(true) / 2) + (popover.outerHeight(true));
+					var _p_h = btn.closest('.azbn__apartment__section').outerHeight(true);
+					
+					if(_h > _p_h) {
+						_h = _p_h - popover.outerHeight(true);
+					} else {
+						_h = btn.parent().position().top + (btn.outerHeight(true) / 2) - (popover.outerHeight(true) / 2);
+					}
+					
+					//var _h = btn.parent().position().top + (btn.outerHeight(true) / 2) - (popover.outerHeight(true) / 2);
+					
 					popover
 						.css({
-							'left' : btn.position().left + btn.outerWidth(true) + 42 + 'px',
-							//'right' : 'inherit',//btn.position().left + btn.outerWidth(true) + 20 + popover.outerWidth(true) + 'px',
-							'top' : btn.parent().position().top + (btn.outerHeight(true) / 2) - (popover.outerHeight(true) / 2) + 'px',
+							'left' : btn_pos.left + btn.outerWidth(true) + 42 + 'px',
+							'top' : _h + 'px',
 						})
 						.fadeIn('fast')
 					;
