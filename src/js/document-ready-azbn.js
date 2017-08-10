@@ -149,6 +149,7 @@
 			
 			var form = $(this);
 			var form_proxy = $('.azbn__api__property-selection__proxy');
+			var submit_btn = form.find('.azbn__api__form__btn');
 			
 			form.data('in-request', 0);
 			
@@ -241,7 +242,7 @@
 				
 				form_proxy.find('input[name="' + name + '"]').val(_val);
 				
-				form_proxy.trigger('submit.azbn');
+				//form_proxy.trigger('submit.azbn');
 			});
 			
 			/*
@@ -261,11 +262,15 @@
 				
 				form_proxy.find('input[name="' + name + '"]').val(_val);
 				
-				form_proxy.trigger('submit.azbn');
+				//form_proxy.trigger('submit.azbn');
 				//console.log(opt.attr('value'));
 				//sel.val(opt.attr('value'));
 				//sel.trigger('blur.azbn');
 				//alert(opt.attr('value'));
+			});
+			
+			submit_btn.on('click.azbn', function(){
+				form_proxy.trigger('submit.azbn');
 			});
 			
 			form_proxy.trigger('azbn.copy');
