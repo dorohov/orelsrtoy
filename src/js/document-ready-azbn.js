@@ -346,36 +346,8 @@
 		
 		if(!screenJS.isXS() && !screenJS.isSM()) {
 			
-			$('.azbn__apartment__section .azbn__apartment__link.is--free').on({
+			var __recalcPosition = function(btn, popover) {
 				
-				mouseover : function(event){
-					event.preventDefault();
-					
-					var btn = $(this);
-					
-					$('.azbn__apartment__section .azbn__apartment__popover').hide();
-					
-					var info = JSON.parse(btn.attr('data-popup-info'));
-					console.log(info);
-					var popover = btn.closest('.azbn__apartment__section').find('.azbn__apartment__popover');
-					/*
-					if(info.img != '') {
-						
-						var _img = new Image();
-						_img.src = info.img;
-						img.onload = function() {
-							
-							
-							
-						}
-						
-					}
-					*/
-					popover.find('.azbn__apartment__popover__title').html(info.title);
-					popover.find('.azbn__apartment__popover__img').attr('src', info.img);
-					popover.find('.azbn__apartment__popover__area_total').html(info.area_total);
-					popover.find('.azbn__apartment__popover__price_value').html(info.price_value);
-					
 					var btn_pos = btn.position();
 					
 					var _h = btn.parent().position().top + (btn.outerHeight(true) / 2) - (popover.outerHeight(true) / 2) + (popover.outerHeight(true));
@@ -396,6 +368,40 @@
 						})
 						.fadeIn('fast')
 					;
+				
+			}
+			
+			$('.azbn__apartment__section .azbn__apartment__link.is--free').on({
+				
+				mouseover : function(event){
+					event.preventDefault();
+					
+					var btn = $(this);
+					
+					$('.azbn__apartment__section .azbn__apartment__popover').hide();
+					
+					var info = JSON.parse(btn.attr('data-popup-info'));
+					//console.log(info);
+					var popover = btn.closest('.azbn__apartment__section').find('.azbn__apartment__popover');
+					
+					if(info.img != '') {
+						
+						var _img = new Image();
+						_img.src = info.img;
+						_img.onload = function() {
+							
+							__recalcPosition(btn, popover);
+							
+						}
+						
+					}
+					
+					popover.find('.azbn__apartment__popover__title').html(info.title);
+					popover.find('.azbn__apartment__popover__img').attr('src', info.img);
+					popover.find('.azbn__apartment__popover__area_total').html(info.area_total);
+					popover.find('.azbn__apartment__popover__price_value').html(info.price_value);
+					
+					__recalcPosition(btn, popover);
 					
 				},
 				
