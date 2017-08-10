@@ -259,31 +259,23 @@
 	</ul>
 </div>
 	</div>
-	<div class="mortgage-header__block" style="background-image: url('/img/temp/bg-mortgage-header.jpg')">
-	<div class="mortgage-header__container container">
-		<div class="owl-block mortgage-header__owl">
-			<div class="mortgage-header__owl-item">
-				<img src="/img/temp/morj-item1.jpg" class="img-responsive" alt="">				
-			</div>
-			<div class="mortgage-header__owl-item">
-				<img src="/img/temp/morj-item1.jpg" class="img-responsive" alt="">
-			</div>
-			<div class="mortgage-header__owl-item">
-				<img src="/img/temp/morj-item1.jpg" class="img-responsive" alt="">
-			</div>
-		</div>		
-	</div>
-	
-	<!--<div class="container content-block__container mortgage-header__container">
-		<div class="mortgage-header__heading">
-			<div class="mortgage-header__heading-small">
-				Спецпредложение
-			</div>
-			<div class="mortgage-header__heading-big">
-				Ипотека 8.2 %
-			</div>
+	<div class="mortgage-header__block">
+	<div class="owl-one mortgage-header__owl">
+		<div class="mortgage-header__owl-item">
+			<img 
+				src="/img/temp/morj-item1-lg.jpg" 
+				data-src-0="/img/temp/morj-item1-sm.jpg" 
+				data-src-451="/img/temp/morj-item1-lg.jpg" 
+				class="img-responsive" alt="">				
 		</div>
-	</div>-->
+		<div class="mortgage-header__owl-item">
+			<img 
+				src="/img/temp/morj-item2-lg.jpg" 
+				data-src-0="/img/temp/morj-item2-sm.jpg" 
+				data-src-451="/img/temp/morj-item2-lg.jpg" 
+				class="img-responsive" alt="">				
+		</div>	
+	</div>
 </div> 
 	<div class="container content-block__container _mgp__container  is--calc-center">		
 		<div class="mortgage-panel__row row  is--wrap">
@@ -583,5 +575,14 @@
 		<link rel="stylesheet" type="text/css" href="/css/owl.jquery.css">
 <script src="/js/owl.jquery/owl.carousel.min.js"></script> 
 <script src="/js/owl.jquery/owl.ready.js"></script> 
+		<script src="/js/response.min.js" ></script> 
+<script>
+	Response.create({
+	    prop: "width", 
+	    prefix: "data-src- r src", 
+	    breakpoints: [1281,1025,1024,980,768,451,320,0], 
+	    lazy: true
+	});
+</script>
 	</body>
 </html>

@@ -173,14 +173,81 @@
 /*custom controls*/
 .mortgage-header__owl{
 	.owl-stage-outer{
-		@media @media-screen {
-			padding-bottom: 25px;
-		}
+		padding-bottom: 0px;		
 	}
 	.owl-nav{
 		.owl-prev,
 		.owl-next{
 			color:  @white;
+			bottom: 30px;
+			@media @media-notsmart {
+				bottom: 50%;				
+			}
+			transform: translateY(50%) scale(1);
+			svg{
+				width: 34px;
+				height: 34px;
+				@media @media-notsmart {
+					width: 46px;
+					height: 46px;
+				}
+			}
+			&:hover{
+				transform: translateY(50%) scale(1.15);
+			}
+		}
+		.owl-prev{
+			left: 2vw;
+			&:hover{
+				left: 2vw;
+			}
+		}
+		.owl-next{
+			right: 2vw;
+			&:hover{
+				right: 2vw;
+			}
+		}
+	}
+}
+.property-slider__owl{
+	.owl-nav{
+		.owl-prev,
+		.owl-next{
+			//color:  @white;
+			@media @media-screen {
+				bottom: 50%;	
+				transform: translateY(50%) scale(1);			
+			}
+			svg{
+				width: 34px;
+				height: 34px;
+				@media @media-screen {
+					width: 46px;
+					height: 46px;
+				}
+			}
+			&:hover{
+				@media @media-screen {
+					transform: translateY(50%) scale(1.15);
+				}
+			}
+		}
+		.owl-prev{
+			@media @media-screen {
+				left: -3vw;
+				&:hover{
+					left: -3vw;
+				}
+			}
+		}
+		.owl-next{
+			@media @media-screen {
+				right: -3vw;
+				&:hover{
+					right: -3vw;
+				}
+			}
 		}
 	}
 }
