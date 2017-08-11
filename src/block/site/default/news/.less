@@ -105,13 +105,13 @@
 		display: block;
 		position: relative;
 		height: 100%;
-		background-size: cover;
-		background-position: center;
 		background-repeat: no-repeat;
-		@media @media-device {
-			background-size: contain;
-    		background-position: left center;
-		}	
+		background-size: contain;
+		background-position: left center;	
+		@media @media-size-xxl {
+			background-position: center;			
+			background-size: cover;
+		}
 		&.is--full{
 			@media @media-size-xs {
 				height: 200px;
