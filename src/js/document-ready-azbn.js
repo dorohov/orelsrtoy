@@ -456,10 +456,12 @@
 				
 				form.closest('.modal').modal('hide');
 				
+				$('.azbn-api-formsave-result').html(data.response.message.text);
+				
 				$('#modal-message-formsave-result').modal();
 				
 				/*
-				$('.azbn-api-formsave-result').html(data.response.message.text);
+				
 				
 				$('#modal-message-formsave-result').modal();
 				
