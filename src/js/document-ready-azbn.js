@@ -349,6 +349,9 @@
 			var __recalcPosition = function(btn, popover) {
 				
 					var btn_pos = btn.position();
+					var btn_ofs = btn.offset();
+					
+					var cont = popover.closest('.owl-stage-outer');
 					
 					var _h = btn.parent().position().top + (btn.outerHeight(true) / 2) - (popover.outerHeight(true) / 2) + (popover.outerHeight(true));
 					var _p_h = btn.closest('.azbn__apartment__section').outerHeight(true);
@@ -361,15 +364,18 @@
 					}
 					
 					
+					
 					var _w = btn_pos.left + btn.outerWidth(true) + 42;
 					
-					if((_w + popover.outerWidth(true)) > _p_w) {
-						
+					var __ofs_l = btn_ofs.left + btn.outerWidth(true) + 42 + popover.outerWidth(true);
+					
+					if(__ofs_l > (cont.offset().left + cont.outerWidth(true))) {
 						_w =  btn_pos.left - popover.outerWidth(true) - 4;
-						
 					}
 					
 					//var _h = btn.parent().position().top + (btn.outerHeight(true) / 2) - (popover.outerHeight(true) / 2);
+					
+					
 					
 					popover
 						.css({
@@ -381,10 +387,27 @@
 				
 			}
 			
+			$('.azbn__apartment__section').on({
+				
+				mouseover : function(event){
+					
+					//$('.azbn__apartment__section .azbn__apartment__popover').hide();
+					
+				},
+				
+				mouseout : function(event){
+					//event.preventDefault();
+					
+					$(this).find('.azbn__apartment__popover').hide();
+					
+				},
+				
+			});
+			
 			$('.azbn__apartment__section .azbn__apartment__link.is--free').on({
 				
 				mouseover : function(event){
-					event.preventDefault();
+					//event.preventDefault();
 					
 					var btn = $(this);
 					
@@ -416,9 +439,11 @@
 				},
 				
 				mouseout : function(event){
-					event.preventDefault();
+					//event.preventDefault();
 					
 					var btn = $(this);
+					
+					//$('.azbn__apartment__section .azbn__apartment__popover').hide();
 					
 					var popover = btn.closest('.azbn__apartment__section').find('.azbn__apartment__popover');
 					
