@@ -352,6 +352,7 @@
 					
 					var _h = btn.parent().position().top + (btn.outerHeight(true) / 2) - (popover.outerHeight(true) / 2) + (popover.outerHeight(true));
 					var _p_h = btn.closest('.azbn__apartment__section').outerHeight(true);
+					var _p_w = btn.closest('.azbn__apartment__section').outerWidth(true);
 					
 					if(_h > _p_h) {
 						_h = _p_h - popover.outerHeight(true);
@@ -359,11 +360,20 @@
 						_h = btn.parent().position().top + (btn.outerHeight(true) / 2) - (popover.outerHeight(true) / 2);
 					}
 					
+					
+					var _w = btn_pos.left + btn.outerWidth(true) + 42;
+					
+					if((_w + popover.outerWidth(true)) > _p_w) {
+						
+						_w =  btn_pos.left - popover.outerWidth(true) - 4;
+						
+					}
+					
 					//var _h = btn.parent().position().top + (btn.outerHeight(true) / 2) - (popover.outerHeight(true) / 2);
 					
 					popover
 						.css({
-							'left' : btn_pos.left + btn.outerWidth(true) + 42 + 'px',
+							'left' : _w + 'px',
 							'top' : _h + 'px',
 						})
 						.fadeIn('fast')
