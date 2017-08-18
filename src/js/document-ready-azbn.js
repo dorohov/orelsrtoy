@@ -363,6 +363,9 @@
 						_h = btn.parent().position().top + (btn.outerHeight(true) / 2) - (popover.outerHeight(true) / 2);
 					}
 					
+					if(_h < 0) {
+						_h = 0;
+					}
 					
 					
 					var _w = btn_pos.left + btn.outerWidth(true) + 42;
