@@ -306,6 +306,34 @@
 		
 		
 		
+		(function(){
+			
+			if($('.azbn-property-resale-table').length) {
+				
+				$('.azbn-property-resale-table .azbn-property-resale-table__item').each(function(index){
+					
+					if(index > 13) {
+						$(this).hide();
+					}
+					
+				});
+				
+				$(document.body).on('click', '.azbn-property-resale-btn-block .azbn-property-resale-btn-block__btn', null, function(event){
+					event.preventDefault();
+					
+					var btn = $(this);
+					
+					$('.azbn-property-resale-table .azbn-property-resale-table__item:not(:visible)').fadeIn('fast');
+					btn.closest('.azbn-property-resale-btn-block').empty().remove();
+					
+				});
+				
+			}
+			
+		})();
+		
+		
+		
 		
 		
 		$('.azbn__building-list__btn').empty().remove();
