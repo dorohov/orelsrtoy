@@ -401,7 +401,9 @@
 				mouseout : function(event){
 					//event.preventDefault();
 					
-					$(this).find('.azbn__apartment__popover').hide();
+					//$(this).find('.azbn__apartment__popover').hide();
+					
+					$('.azbn__apartment__section .azbn__apartment__popover').hide();
 					
 				},
 				
@@ -446,11 +448,11 @@
 					
 					var btn = $(this);
 					
-					//$('.azbn__apartment__section .azbn__apartment__popover').hide();
+					$('.azbn__apartment__section .azbn__apartment__popover').hide();
 					
-					var popover = btn.closest('.azbn__apartment__section').find('.azbn__apartment__popover');
+					//var popover = btn.closest('.azbn__apartment__section').find('.azbn__apartment__popover');
 					
-					popover.hide();
+					//popover.hide();
 					
 				},
 				
